@@ -379,6 +379,41 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 
 
 
+		/*
+		 * Radio Image Option
+		 *
+		 * This is a cutom radio image option you can use inside the WordPress customizer.
+		 * Sanitize using polygon_sanitize_select.
+		 */
+		$wp_customize->add_setting(
+			'radio_image_option',
+			array(
+				'default'           => 'first-option',
+				'sanitize_callback'	=> 'polygon_sanitize_select',
+			)
+		);
+
+		$wp_customize->add_control(
+			new Polygon_Customize_Radio_Image_Control(
+				$wp_customize,
+				'radio_image_option',
+				array(
+					'label'       => __( 'Radio Image Option', 'polygon' ),
+					'description' => __( 'This is an example control for a custom radio image option.', 'polygon' ),
+					'section'     => 'section_advanced_settings',
+					'choices'     => array(
+						'first-option'  => '/link/to/image-one.png',
+						'second-option' => '/link/to/image-two.png',
+						'third-option'  => '/link/to/image-three.png',		),
+					'columns'           => 3,
+				)
+			)
+		);
+
+
+
+
+
 
 		/*
 		 * Register settings from partials
