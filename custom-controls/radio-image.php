@@ -51,7 +51,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 		 *     )
 		 * );
 		 *
-		 * The control accepts up to 6 columns.
+		 * The control accepts up to 10 columns.
 		 *
 		 * @since    1.0.0
 		 */
@@ -109,9 +109,6 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 				$name = 'customize-radio-' . $this->id;
 
 				switch ( $this->columns ) {
-					case 1 :
-						$columns = 'one-column';
-						break;
 					case 2 :
 						$columns = 'two-columns';
 						break;
@@ -126,6 +123,18 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 						break;
 					case 6 :
 						$columns = 'six-columns';
+						break;
+					case 7 :
+						$columns = 'seven-columns';
+						break;
+					case 8 :
+						$columns = 'eight-columns';
+						break;
+					case 9 :
+						$columns = 'nine-columns';
+						break;
+					case 10 :
+						$columns = 'ten-columns';
 						break;
 					default :
 						$columns = 'one-column';
@@ -219,6 +228,22 @@ if ( ! function_exists( 'polygon_customizer_control_radio_image_css' ) ) {
 
 				.customize-control-radio-image .image.six-columns label {
 					max-width: 15%;
+				}
+
+				.customize-control-radio-image .image.seven-columns label {
+					max-width: 12.7%;
+				}
+
+				.customize-control-radio-image .image.eight-columns label {
+					max-width: 10.8%;
+				}
+
+				.customize-control-radio-image .image.nine-columns label {
+					max-width: 9.5%;
+				}
+
+				.customize-control-radio-image .image.ten-columns label {
+					max-width: 8.4%;
 				}
 
 				.customize-control-radio-image label img {
