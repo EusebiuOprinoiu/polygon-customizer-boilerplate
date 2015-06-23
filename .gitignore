@@ -1,0 +1,14 @@
+# Files that will be ignored by Git
+.git
+
+# Windows files that will be ignored by Git
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Mac OS files that will be ignored by Git
+.DS_Store
+
+# Sublime Text files that will be ignored by Git
+*.sublime-project
+*.sublime-workspace
