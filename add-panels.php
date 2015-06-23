@@ -4,7 +4,7 @@
  * Add panels to the WordPress customizer
  *
  * @since      1.0.0
- * @package    Customizer Boilerplate
+ * @package    Customizer_Boilerplate
  */
 
 

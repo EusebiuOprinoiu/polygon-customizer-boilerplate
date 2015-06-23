@@ -4,7 +4,7 @@
  * Add settings to the WordPress customizer
  *
  * @since      1.0.0
- * @package    Customizer Boilerplate
+ * @package    Customizer_Boilerplate
  */
 
 
@@ -41,7 +41,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				'transport'            => 'refresh',                          // or postMessage
 				'capability'           => 'edit_theme_options',
 				'theme_supports'       => 'polygon-portfolio',
-				'sanitize_callback'	   => 'sanitization_callback_function',
+				'sanitize_callback'    => 'sanitization_callback_function',
 				'sanitize_js_callback' => 'js_sanitization_callback_function',
 			)
 		);
@@ -77,7 +77,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				'transport'            => 'refresh',                          // or postMessage
 				'capability'           => 'edit_theme_options',
 				'theme_supports'       => 'polygon-portfolio',
-				'sanitize_callback'	   => 'sanitization_callback_function',
+				'sanitize_callback'    => 'sanitization_callback_function',
 				'sanitize_js_callback' => 'js_sanitization_callback_function',
 			)
 		);
@@ -118,7 +118,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			'text_option',
 			array(
 				'default'           => 'Default value',
-				'sanitize_callback'	=> 'sanitization_callback_function',    // According to the comment above
+				'sanitize_callback' => 'sanitization_callback_function',    // According to the comment above
 			)
 		);
 
@@ -149,7 +149,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			'textarea_option',
 			array(
 				'default'           => 'Default value',
-				'sanitize_callback'	=> 'sanitization_callback_function',    // According to the comment above
+				'sanitize_callback' => 'sanitization_callback_function',    // According to the comment above
 			)
 		);
 
@@ -177,7 +177,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			'checkbox_option',
 			array(
 				'default'           => 'Default value',
-				'sanitize_callback'	=> 'polygon_sanitize_checkbox',
+				'sanitize_callback' => 'polygon_sanitize_checkbox',
 			)
 		);
 
@@ -205,7 +205,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			'select_option',
 			array(
 				'default'           => 'first-option',
-				'sanitize_callback'	=> 'polygon_sanitize_select',
+				'sanitize_callback' => 'polygon_sanitize_select',
 			)
 		);
 
@@ -238,7 +238,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			'radio_option',
 			array(
 				'default'           => 'first-option',
-				'sanitize_callback'	=> 'polygon_sanitize_select',
+				'sanitize_callback' => 'polygon_sanitize_select',
 			)
 		);
 
@@ -271,7 +271,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			'dropdown_pages_option',
 			array(
 				'default'           => null,
-				'sanitize_callback'	=> 'polygon_sanitize_dropdown_pages',
+				'sanitize_callback' => 'polygon_sanitize_dropdown_pages',
 			)
 		);
 
@@ -299,7 +299,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			'image_upload_option',
 			array(
 				'default'           => null,
-				'sanitize_callback'	=> 'polygon_sanitize_image',
+				'sanitize_callback' => 'polygon_sanitize_image',
 			)
 		);
 
@@ -329,7 +329,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			'file_upload_option',
 			array(
 				'default'           => null,
-				'sanitize_callback'	=> 'sanitization_callback_function',
+				'sanitize_callback' => 'sanitization_callback_function',
 			)
 		);
 
@@ -359,7 +359,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			'color_option',
 			array(
 				'default'           => '#abcdef',
-				'sanitize_callback'	=> 'polygon_sanitize_hex_color',
+				'sanitize_callback' => 'polygon_sanitize_hex_color',
 			)
 		);
 
