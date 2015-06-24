@@ -389,7 +389,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			'radio_image_option',
 			array(
 				'default'           => 'first-option',
-				'sanitize_callback'	=> 'polygon_sanitize_select',
+				'sanitize_callback' => 'polygon_sanitize_select',
 			)
 		);
 
@@ -405,7 +405,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 						'first-option'  => '/link/to/image-one.png',
 						'second-option' => '/link/to/image-two.png',
 						'third-option'  => '/link/to/image-three.png',		),
-					'columns'           => 3,
+					'columns'     => 3,
 				)
 			)
 		);
@@ -424,7 +424,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			'multiple_checkbox_option',
 			array(
 				'default'           => 'first-option',
-				'sanitize_callback'	=> 'polygon_sanitize_multiple_checkbox',
+				'sanitize_callback' => 'polygon_sanitize_multiple_checkbox',
 			)
 		);
 
