@@ -404,7 +404,8 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 					'choices'     => array(
 						'first-option'  => '/link/to/image-one.png',
 						'second-option' => '/link/to/image-two.png',
-						'third-option'  => '/link/to/image-three.png',		),
+						'third-option'  => '/link/to/image-three.png',
+					),
 					'columns'     => 3,
 				)
 			)
