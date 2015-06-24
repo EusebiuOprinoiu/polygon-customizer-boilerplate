@@ -165,9 +165,9 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 					</div>
 
 					<script>
-						jQuery(document).ready(function($) { 
-							$( '[id="input_<?php echo $this->id; ?>"]' ).buttonset();
-						});
+						jQuery( document ).ready( function() { 
+							jQuery( '[id="input_<?php echo $this->id; ?>"]' ).buttonset();
+						} );
 					</script>
 				<?php
 			}
