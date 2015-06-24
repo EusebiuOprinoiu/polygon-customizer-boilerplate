@@ -54,6 +54,44 @@ if ( ! function_exists( 'polygon_sanitize_checkbox' ) ) {
 
 
 
+if ( ! function_exists( 'polygon_sanitize_multiple_checkbox' ) ) {
+
+	/**
+	 * Sanitize multiple checkbox.
+	 *
+	 * Sanitization callback for 'multiple checkbox' type controls. Since everything
+	 * is stored as a comma-delineated string of values rather than array we'll turn
+	 * the values into an array before saving to the database.
+	 *
+	 * This sanitization function can be used with Polygon_Customize_Multiple_Checkbox_Control.
+	 *
+	 * @since      1.0.0
+	 * @param      string    $values    Coma-delineated string values.
+	 * @return     array                Array of sanitized values.
+	 */
+	function polygon_sanitize_multiple_checkbox( $values ) {
+		if ( ! is_array( $values ) ) {
+			$multi_values = explode( ', ', $values );
+		}
+		else {
+			$multi_values = $values;
+		}
+
+		if ( ! empty( $multi_values ) ) {
+			array_map( 'sanitize_text_field', $multi_values );
+			return $multi_values;
+		}
+		else {
+			return array();
+		}
+	}
+
+}
+
+
+
+
+
 if ( ! function_exists( 'polygon_sanitize_select' ) ) {
 
 	/**

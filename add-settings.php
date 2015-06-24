@@ -414,6 +414,40 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 
 
 
+		/*
+		 * Multiple Checkbox Option
+		 *
+		 * This is a cutom multiple checkbox option you can use inside the WordPress customizer.
+		 * Sanitize using polygon_sanitize_multiple_checkbox.
+		 */
+		$wp_customize->add_setting(
+			'multiple_checkbox_option',
+			array(
+				'default'           => 'first-option',
+				'sanitize_callback'	=> 'polygon_sanitize_multiple_checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			new Polygon_Customize_Multiple_Checkbox_Control(
+				$wp_customize,
+				'multiple_checkbox_option',
+				array(
+					'label'       => __( 'Multiple Checkbox option', 'polygon' ),
+					'description' => __( 'This is an example control for a custom multiple checkbox option.', 'polygon' ),
+					'section'     => 'section_advanced_settings',
+					'choices'     => array(
+						'first-option'  => __( 'First Option',  'polygon' ),
+						'second-option' => __( 'Second Option', 'polygon' ),
+						'third-option'  => __( 'Third Option',  'polygon' ),
+					)
+				)
+			)
+		);
+
+
+
+
 
 		/*
 		 * Register settings from partials
