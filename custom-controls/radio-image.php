@@ -202,8 +202,7 @@ if ( ! function_exists( 'polygon_customizer_control_radio_image_css' ) ) {
 					display: inline-block;
 					float: left;
 					max-width: 100%;
-					padding-left: 2px;
-					padding-right: 2px;
+					margin: 4px;
 				}
 
 				.customize-control-radio-image .image.one-column label {
@@ -211,42 +210,43 @@ if ( ! function_exists( 'polygon_customizer_control_radio_image_css' ) ) {
 				}
 
 				.customize-control-radio-image .image.two-columns label {
-					max-width: 48%;
+					max-width: 46.7%;
 				}
 
 				.customize-control-radio-image .image.three-columns label {
-					max-width: 31.5%;
+					max-width: 30%;
 				}
 
 				.customize-control-radio-image .image.four-columns label {
-					max-width: 23%;
+					max-width: 21.7%;
 				}
 
 				.customize-control-radio-image .image.five-columns label {
-					max-width: 18.3%;
+					max-width: 16.9%;
 				}
 
 				.customize-control-radio-image .image.six-columns label {
-					max-width: 15%;
+					max-width: 13.5%;
 				}
 
 				.customize-control-radio-image .image.seven-columns label {
-					max-width: 12.7%;
+					max-width: 11.2%;
 				}
 
 				.customize-control-radio-image .image.eight-columns label {
-					max-width: 10.8%;
+					max-width: 9.4%;
 				}
 
 				.customize-control-radio-image .image.nine-columns label {
-					max-width: 9.5%;
+					max-width: 8%;
 				}
 
 				.customize-control-radio-image .image.ten-columns label {
-					max-width: 8.4%;
+					max-width: 6.9%;
 				}
 
 				.customize-control-radio-image label img {
+					display: block;
 					opacity: 0.5;
 				}
 
@@ -256,6 +256,9 @@ if ( ! function_exists( 'polygon_customizer_control_radio_image_css' ) ) {
 
 				.customize-control-radio-image label.ui-state-active img {
 					opacity: 1;
+					padding: 2px;
+					border: #777 1px solid;
+					margin: -3px;
 				}
 			</style>
 		<?php
