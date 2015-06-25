@@ -56,7 +56,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' 
 			/**
 			 * Control type.
 			 *
-			 * @since     1.1.0
+			 * @since     1.0.0
 			 * @var       string
 			 */
 			public $type = 'checkbox-multiple';

@@ -60,7 +60,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 			/**
 			 * Control type.
 			 *
-			 * @since     1.1.0
+			 * @since     1.0.0
 			 * @var       string
 			 */
 			public $type = 'radio-image';
@@ -70,7 +70,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 			/**
 			 * Number of columns.
 			 *
-			 * @since     1.1.0
+			 * @since     1.0.0
 			 * @var       string
 			 */
 			public $columns;
@@ -106,8 +106,6 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 					return;
 				}			
 				
-				$name = 'customize-radio-' . $this->id;
-
 				switch ( $this->columns ) {
 					case 2 :
 						$columns = 'two-columns';
@@ -154,19 +152,21 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 						</span>
 					<?php } ?>
 
-					<div id="input_<?php echo $this->id; ?>" class="image <?php echo $columns; ?>">
+					<div id="radio-image-<?php echo sanitize_title_with_dashes( $this->id ); ?>" class="image <?php echo sanitize_html_class( $columns ); ?>">
 						<?php foreach ( $this->choices as $value => $label ) { ?>
-							<input class="radio-image" type="radio" value="<?php echo esc_attr( $value ); ?>" id="<?php echo $this->id . '_' . $value; ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?>>
-								<label for="<?php echo $this->id . '_' . $value; ?>">
+
+							<input type="radio" id="<?php echo sanitize_title_with_dashes( $this->id . '-' . $value ); ?>" name="customize-radio-<?php echo sanitize_title_with_dashes( $this->id ); ?>" value="<?php echo esc_attr( $value ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?>>
+								<label for="<?php echo esc_attr( $this->id . '-' . $value ); ?>">
 									<img src="<?php echo esc_html( $label ); ?>" alt="<?php echo esc_attr( $value ); ?>" title="<?php echo esc_attr( $value ); ?>">
 								</label>
 							</input>
+
 						<?php } ?>
 					</div>
 
 					<script>
 						jQuery( document ).ready( function() { 
-							jQuery( '[id="input_<?php echo $this->id; ?>"]' ).buttonset();
+							jQuery( '[id="radio-image-<?php echo sanitize_title_with_dashes( $this->id ); ?>"]' ).buttonset();
 						} );
 					</script>
 				<?php
@@ -194,7 +194,7 @@ if ( ! function_exists( 'polygon_customizer_control_radio_image_css' ) ) {
 	function polygon_customizer_control_radio_image_css() { 
 		?>
 			<style>
-				.customize-control-radio-image input[type=radio] {
+				.customize-control-radio-image input[type="radio"] {
 					float: left;
 				}
 

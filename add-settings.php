@@ -129,6 +129,9 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				'description' => __( 'This is an example control for a basic text option.', 'polygon' ),
 				'section'     => 'section_basic_settings',
 				'type'        => 'text',
+				'input_attrs' => array(
+					// $key => $value pairs for input attributes
+				),
 			)
 		);
 
