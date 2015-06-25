@@ -4,19 +4,19 @@
  * Custom sanitization callbacks for the WordPress customizer
  *
  * The Customizer API includes basic controls for the following control types:
- * - basic: text 
- * - basic: textarea 
- * - basic: checkbox 
- * - basic: radio 
- * - basic: select 
+ * - basic: text
+ * - basic: textarea
+ * - basic: checkbox
+ * - basic: radio
+ * - basic: select
  * - basic: dropdown pages
- * 
+ *
  * WordPress 4.0 also introduced controls for the following specialized text input control types:
  * - text: email
- * - text: number 
+ * - text: number
  * - text: password (not included here)
  * - text: search (not included here)
- * - text: tel 
+ * - text: tel
  * - text: url
  *
  * @since      1.0.0
@@ -96,7 +96,7 @@ if ( ! function_exists( 'polygon_sanitize_select' ) ) {
 
 	/**
 	 * Sanitize select.
-	 * 
+	 *
 	 * Sanitization callback for 'select' and 'radio' type controls. This callback sanitizes $input
 	 * as a slug, and then validates $input against the choices defined for the control.
 	 *
@@ -106,17 +106,17 @@ if ( ! function_exists( 'polygon_sanitize_select' ) ) {
 	 * @since     1.0.0
 	 * @param     string                  $input      Slug to sanitize.
 	 * @param     WP_Customize_Setting    $setting    Setting instance.
-	 * @return    string                              Sanitized slug if it is a valid choice. Otherwise, 
-	 *                                                the setting default.
+	 * @return    string                              Sanitized slug if it is a valid choice. Otherwise,
+	 *                                                The setting default.
 	 */
 	function polygon_sanitize_select( $input, $setting ) {
-		
+
 		// Ensure input is a slug
 		$input = sanitize_key( $input );
-		
+
 		// Get list of choices associated with the setting
 		$choices = $setting->manager->get_control( $setting->id )->choices;
-		
+
 		// Return input or default value
 		if ( array_key_exists( $input, $choices ) ) {
 			return $input;
@@ -141,8 +141,8 @@ if ( ! function_exists( 'polygon_sanitize_url' ) ) {
 	 *
 	 * - Sanitization: url
 	 * - Control:      text, url.
-	 * 
-	 * Note: esc_url_raw() can be passed directly to the 'sanitize_callback'. This function is a simple 
+	 *
+	 * Note: esc_url_raw() can be passed directly to the 'sanitize_callback'. This function is a simple
 	 * wrapper for it.
 	 *
 	 * @since     1.0.0
@@ -173,13 +173,13 @@ if ( ! function_exists( 'polygon_sanitize_email' ) ) {
 	 * @since     1.0.0
 	 * @param     string                  $email      Email address to sanitize.
 	 * @param     WP_Customize_Setting    $setting    Setting instance.
-	 * @return    string                              The sanitized email if not null. Otherwise, 
+	 * @return    string                              The sanitized email if not null. Otherwise,
 	 *                                                the setting default.
 	 */
 	function polygon_sanitize_email( $email, $setting ) {
 		// Sanitize $email
 		$email = sanitize_email( $email );
-		
+
 		// Return email or default value
 		if ( $email ) {
 			return $email;
@@ -209,22 +209,22 @@ if ( ! function_exists( 'polygon_sanitize_image' ) ) {
 	 * @since     1.0.0
 	 * @param     string                  $image      Image filename.
 	 * @param     WP_Customize_Setting    $setting    Setting instance.
-	 * @return    string                              The image filename if the extension is allowed. 
+	 * @return    string                              The image filename if the extension is allowed.
 	 *                                                Otherwise, the setting default.
 	 */
 	function polygon_sanitize_image( $image, $setting ) {
 		// Accepted image types
 	    $mimes = array(
-	        'jpg|jpeg|jpe' => 'image/jpeg',
-	        'gif'          => 'image/gif',
-	        'png'          => 'image/png',
-	        'bmp'          => 'image/bmp',
-	        'tif|tiff'     => 'image/tiff',
-	        'ico'          => 'image/x-icon'
-	    );
+			'jpg|jpeg|jpe' => 'image/jpeg',
+			'gif'          => 'image/gif',
+			'png'          => 'image/png',
+			'bmp'          => 'image/bmp',
+			'tif|tiff'     => 'image/tiff',
+			'ico'          => 'image/x-icon'
+		);
 
 		// Return an array with file extension and mime_type
-	    $file = wp_check_filetype( $image, $mimes );
+		$file = wp_check_filetype( $image, $mimes );
 
 		// Return image or default value
 		if ( $file['ext'] ) {
@@ -245,7 +245,7 @@ if ( ! function_exists( 'polygon_sanitize_hex_color' ) ) {
 
 	/**
 	 * Sanitize Hex color.
-	 * 
+	 *
 	 * Note: sanitize_hex_color_no_hash() can also be used here, depending on whether
 	 * or not the hash prefix should be stored/retrieved with the hex color value.
 	 *
@@ -255,13 +255,13 @@ if ( ! function_exists( 'polygon_sanitize_hex_color' ) ) {
 	 * @since     1.0.0
 	 * @param     string                  $hex_color    HEX color to sanitize.
 	 * @param     WP_Customize_Setting    $setting      Setting instance.
-	 * @return    string                                The sanitized Hex color if not null. Otherwise, 
+	 * @return    string                                The sanitized Hex color if not null. Otherwise,
 	 *                                                  the setting default.
 	 */
 	function polygon_sanitize_hex_color( $hex_color, $setting ) {
 		// Sanitize $input as a hex value with hash
 		$hex_color = sanitize_hex_color( $hex_color );
-		
+
 		// Return hex value or default value
 		if ( $hex_color ) {
 			return $hex_color;
@@ -291,13 +291,13 @@ if ( ! function_exists( 'polygon_sanitize_dropdown_pages' ) ) {
 	 * @since     1.0.0
 	 * @param     int                     $page       Page ID.
 	 * @param     WP_Customize_Setting    $setting    Setting instance.
-	 * @return    int|string                          Page ID if the page is published. Otherwise, 
+	 * @return    int|string                          Page ID if the page is published. Otherwise,
 	 *                                                the setting default.
 	 */
 	function polygon_sanitize_dropdown_pages( $page_id, $setting ) {
 		// Make sure $input is an absolute integer
 		$page_id = absint( $page_id );
-		
+
 		// Return page ID or default value
 		if ( get_post_status( $page_id ) == 'publish' ) {
 			return $page_id;
@@ -327,18 +327,18 @@ if ( ! function_exists( 'polygon_sanitize_number_range' ) ) {
 	 * @since     1.0.0
 	 * @param     int                     $number     Number to check within the numeric range defined by the setting.
 	 * @param     WP_Customize_Setting    $setting    Setting instance.
-	 * @return    int|string                          The number, if it is zero or greater and falls within the defined 
+	 * @return    int|string                          The number, if it is zero or greater and falls within the defined
 	 *                                                range. Otherwise, the setting default.
 	 */
 	function polygon_sanitize_number_range( $number, $setting ) {
-		
+
 		// make sure input is an absolute integer
 		$number = absint( $number );
-		
+
 		// Get input attributes associated with the setting
 		$atts = $setting->manager->get_control( $setting->id )->input_attrs;
 
-		
+
 		// Get minimum number in the range
 		if ( isset( $atts['min'] ) ) {
 			$min = $atts['min'];
@@ -347,7 +347,7 @@ if ( ! function_exists( 'polygon_sanitize_number_range' ) ) {
 			$min = $number;
 		}
 
-		
+
 		// Get maximum number in the range
 		if ( isset( $atts['max'] ) ) {
 			$max = $atts['max'];
@@ -356,7 +356,7 @@ if ( ! function_exists( 'polygon_sanitize_number_range' ) ) {
 			$max = $number;
 		}
 
-		
+
 		// Get step
 		if ( isset( $atts['step'] ) ) {
 			$step = $atts['step'];
@@ -365,7 +365,7 @@ if ( ! function_exists( 'polygon_sanitize_number_range' ) ) {
 			$step = 1;
 		}
 
-		
+
 		// Return number or default value
 		if ( $number >= $min && $number <= $max && is_int( $number / $step ) ) {
 			return $number;
@@ -388,11 +388,11 @@ if ( ! function_exists( 'polygon_sanitize_number_absint' ) ) {
 	 *
 	 * - Sanitization: number_absint
 	 * - Control:      number
-	 * 
+	 *
 	 * Sanitization callback for 'number' type text inputs. This callback sanitizes $number
 	 * as an absolute integer (whole number, zero or greater).
-	 * 
-	 * Note: absint() can be passed directly to the 'sanitize_callback'. This function is a simple 
+	 *
+	 * Note: absint() can be passed directly to the 'sanitize_callback'. This function is a simple
 	 * wrapper for it.
 	 *
 	 *
@@ -404,7 +404,7 @@ if ( ! function_exists( 'polygon_sanitize_number_absint' ) ) {
 	function polygon_sanitize_number_absint( $number, $setting ) {
 		// Make sure $number is an absolute integer
 		$number = absint( $number );
-		
+
 		// Return number or default value
 		if ( $number ) {
 			return $number;
@@ -431,7 +431,7 @@ if ( ! function_exists( 'polygon_sanitize_css' ) ) {
 	 * - Sanitization: css
 	 * - Control:      text, textarea
 	 *
-	 * Note: wp_strip_all_tags() can be passed directly to the 'sanitize_callback'. This 
+	 * Note: wp_strip_all_tags() can be passed directly to the 'sanitize_callback'. This
 	 * function is a simple wrapper for it.
 	 *
 	 * @since     1.0.0
@@ -458,8 +458,8 @@ if ( ! function_exists( 'polygon_sanitize_html' ) ) {
 	 *
 	 * - Sanitization: html
 	 * - Control:      text, textarea
-	 * 
-	 * Note: wp_filter_post_kses() can be passed directly to the 'sanitize_callback'. This 
+	 *
+	 * Note: wp_filter_post_kses() can be passed directly to the 'sanitize_callback'. This
 	 * function is a simple wrapper for it.
 	 *
 	 * @since     1.0.0
@@ -487,7 +487,7 @@ if ( ! function_exists( 'polygon_sanitize_nohtml' ) ) {
 	 * - Sanitization: nohtml
 	 * - Control:      text, textarea, password.
 	 *
-	 * Note: wp_filter_nohtml_kses() can be passed directly to the 'sanitize_callback'. This 
+	 * Note: wp_filter_nohtml_kses() can be passed directly to the 'sanitize_callback'. This
 	 * function is a simple wrapper for it.
 	 *
 	 * @since     1.0.0

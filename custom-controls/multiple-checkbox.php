@@ -75,8 +75,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' 
 			public function render_content() {
 				if ( empty( $this->choices ) ) {
 					return;
-				}			
-				
+				}
+
 				?>
 					<?php if ( ! empty( $this->label ) ) { ?>
 						<span class="customize-control-title">
@@ -90,7 +90,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' 
 						</span>
 					<?php } ?>
 
-					<?php 
+					<?php
 						if ( ! is_array( $this->value() ) ) {
 							$multi_values = explode( ', ', $this->value() );
 						}
@@ -103,7 +103,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' 
 						<?php foreach ( $this->choices as $value => $label ) { ?>
 							<li>
 								<label>
-									<input type="checkbox" value="<?php echo esc_attr( $value ); ?>" <?php checked( in_array( $value, $multi_values ) ); ?> /> 
+									<input type="checkbox" value="<?php echo esc_attr( $value ); ?>" <?php checked( in_array( $value, $multi_values ) ); ?> />
 									<?php echo esc_html( $label ); ?>
 								</label>
 							</li>

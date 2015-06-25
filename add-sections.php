@@ -107,7 +107,7 @@ if ( ! function_exists( 'polygon_customizer_add_sections' ) ) {
 	/**
 	 * Load partials for the customizer sections.
 	 *
-	 * Helper function that loads the partials for the WordPress customizer sections. 
+	 * Helper function that loads the partials for the WordPress customizer sections.
 	 * Must be called in the polygon_register_customizer_sections() function declared above.
 	 *
 	 * @since    1.0.0
@@ -118,7 +118,7 @@ if ( ! function_exists( 'polygon_customizer_add_sections' ) ) {
 		global $wp_customize;
 
 		// Sanitize strings
-		$panel   = sanitize_title_with_dashes( $panel );
+		$panel = sanitize_title_with_dashes( $panel );
 
 		// Load customizer partials
 		require( get_template_directory() . '/includes/customizer/partials/' . $panel . '/' . 'add-sections.php' );
