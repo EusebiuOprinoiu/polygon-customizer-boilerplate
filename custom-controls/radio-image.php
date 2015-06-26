@@ -104,8 +104,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 			public function render_content() {
 				if ( empty( $this->choices ) ) {
 					return;
-				}			
-				
+				}
+
 				switch ( $this->columns ) {
 					case 2 :
 						$columns = 'two-columns';
@@ -142,7 +142,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 				?>
 					<?php if ( ! empty( $this->label ) ) { ?>
 						<span class="customize-control-title">
-							<?php echo esc_attr( $this->label ); ?>
+							<?php echo esc_html( $this->label ); ?>
 						</span>
 					<?php } ?>
 
@@ -165,7 +165,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 					</div>
 
 					<script>
-						jQuery( document ).ready( function() { 
+						jQuery( document ).ready( function() {
 							jQuery( '[id="radio-image-<?php echo sanitize_title_with_dashes( $this->id ); ?>"]' ).buttonset();
 						} );
 					</script>
@@ -191,7 +191,7 @@ if ( ! function_exists( 'polygon_customizer_control_radio_image_css' ) ) {
 	 *
 	 * @since    1.0.0
 	 */
-	function polygon_customizer_control_radio_image_css() { 
+	function polygon_customizer_control_radio_image_css() {
 		?>
 			<style>
 				.customize-control-radio-image input[type="radio"] {

@@ -80,7 +80,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' 
 				?>
 					<?php if ( ! empty( $this->label ) ) { ?>
 						<span class="customize-control-title">
-							<?php echo esc_attr( $this->label ); ?>
+							<?php echo esc_html( $this->label ); ?>
 						</span>
 					<?php } ?>
 
