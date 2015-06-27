@@ -40,7 +40,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 		 *         array(
 		 *             'label'       => __( 'Temporary', 'polygon' ),
 		 *             'description' => __( 'This is a temporary description.', 'polygon' ),
-		 *             'section'     => 'section_custom_code',
+		 *             'section'     => 'section_example_settings',
 		 *             'choices'     => array(
 		 *                 'first-option'  => '/link/to/image-one.png',
 		 *                 'second-option' => '/link/to/image-two.png',
@@ -60,8 +60,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 			/**
 			 * Control type.
 			 *
-			 * @since     1.0.0
-			 * @var       string
+			 * @since    1.0.0
+			 * @var      string
 			 */
 			public $type = 'radio-image';
 
@@ -70,8 +70,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 			/**
 			 * Number of columns.
 			 *
-			 * @since     1.0.0
-			 * @var       string
+			 * @since    1.0.0
+			 * @var      string
 			 */
 			public $columns;
 

@@ -437,7 +437,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				$wp_customize,
 				'multiple_checkbox_option',
 				array(
-					'label'       => __( 'Multiple Checkbox option', 'polygon' ),
+					'label'       => __( 'Multiple Checkbox Option', 'polygon' ),
 					'description' => __( 'This is an example control for a custom multiple checkbox option.', 'polygon' ),
 					'section'     => 'section_advanced_settings',
 					'choices'     => array(
@@ -445,6 +445,74 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 						'second-option' => __( 'Second Option', 'polygon' ),
 						'third-option'  => __( 'Third Option',  'polygon' ),
 					)
+				)
+			)
+		);
+
+
+
+
+
+		/*
+		 * Numeric Slider Option
+		 *
+		 * This is a cutom numeric slider option you can use inside the WordPress customizer.
+		 * Sanitize using polygon_sanitize_number_range.
+		 */
+		$wp_customize->add_setting(
+			'numeric_slider_option',
+			array(
+				'default'           => 10,
+				'sanitize_callback'	=> 'polygon_sanitize_number_range',
+			)
+		);
+
+		$wp_customize->add_control(
+			new Polygon_Customize_Numeric_Slider_Control(
+				$wp_customize,
+				'numeric_slider_option',
+				array(
+					'label'       => __( 'Numeric Slider Option', 'polygon' ),
+					'description' => __( 'This is an example control for a custom numeric slider option.', 'polygon' ),
+					'section'     => 'section_advanced_settings',
+					'input_attrs' => array(
+						'min'  => 1,
+						'max'  => 20,
+						'step' => 1,
+					)
+				)
+			)
+		);
+
+
+
+
+
+		/*
+		 * Google Fonts Option
+		 *
+		 * This is a cutom google fonts option you can use inside the WordPress customizer.
+		 * Sanitize using sanitize_text_field.
+		 */
+		$wp_customize->add_setting(
+			'google_fonts_option',
+			array(
+				'default'           => 'Open Sans',
+				'sanitize_callback'	=> 'sanitize_text_field',
+			)
+		);
+
+		$wp_customize->add_control(
+			new Polygon_Customize_Google_Fonts_Control(
+				$wp_customize,
+				'google_fonts_option',
+				array(
+					'label'       => __( 'Google Fonts Option', 'polygon' ),
+					'description' => __( 'This is an example control for a custom google fonts option.', 'polygon' ),
+					'section'     => 'section_advanced_settings',
+					'api_key'     => 'API-KEY',
+					'amount'      => 'all',        // Number of fonts: number or 'all'
+					'cache_time'  => 30,           // Number of days to cache
 				)
 			)
 		);
@@ -474,7 +542,7 @@ if ( ! function_exists( 'polygon_customizer_add_settings' ) ) {
 	/**
 	 * Load partials for the customizer settings.
 	 *
-	 * Helper function that loads the partials for the WordPress customizer settings. 
+	 * Helper function that loads the partials for the WordPress customizer settings.
 	 * Must be called in the polygon_register_customizer_settings() function declared above.
 	 *
 	 * @since    1.0.0

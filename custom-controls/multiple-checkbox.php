@@ -39,7 +39,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' 
 		 *         array(
 		 *             'label'       => __( 'Temporary', 'polygon' ),
 		 *             'description' => __( 'This is a temporary description.', 'polygon' ),
-		 *             'section'     => 'section_custom_code',
+		 *             'section'     => 'section_example_settings',
 		 *             'choices'     => array(
 		 *                 'first-option'  => __( 'First Option', 'polygon' ),
 		 *                 'second-option' => __( 'Second Option', 'polygon' ),
@@ -56,8 +56,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' 
 			/**
 			 * Control type.
 			 *
-			 * @since     1.0.0
-			 * @var       string
+			 * @since    1.0.0
+			 * @var      string
 			 */
 			public $type = 'checkbox-multiple';
 

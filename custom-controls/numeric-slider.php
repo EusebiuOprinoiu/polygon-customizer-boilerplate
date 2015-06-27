@@ -4,7 +4,7 @@
  * Register a custom Numeric Slider control to the WordPress customizer
  *
  * @since      1.0.0
- * @package    Polygon
+ * @package    Customizer_Boilerplate
  */
 
 
@@ -32,7 +32,30 @@ if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) )
 		 * This class creates a custom range control for the WordPress
 		 * customizer that also displays the value. Example:
 		 *
-		 * // Code example.
+		 * $wp_customize->add_setting(
+		 *     'temporary',
+		 *     array(
+		 *         'default'           => 5,
+		 *         'sanitize_callback' => 'polygon_sanitize_number_range',
+		 *     )
+		 * );
+		 *
+		 * $wp_customize->add_control(
+		 *     new Polygon_Customize_Numeric_Slider_Control(
+		 *         $wp_customize,
+		 *         'temporary',
+		 *         array(
+		 *             'label'       => __( 'Temporary', 'polygon' ),
+		 *             'description' => __( 'This is a temporary description.', 'polygon' ),
+		 *             'section'     => 'section_example_settings',
+		 *             'input_attrs' => array(
+		 *                 'min'  => 0,
+		 *                 'max'  => 20,
+		 *                 'step' => 1,
+		 *             )
+		 *         )
+		 *     )
+		 * );
 		 *
 		 * @since    1.0.0
 		 */
@@ -41,8 +64,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) )
 			/**
 			 * Control type.
 			 *
-			 * @since     1.0.0
-			 * @var       string
+			 * @since    1.0.0
+			 * @var      string
 			 */
 			public $type = 'numeric-slider';
 
