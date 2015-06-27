@@ -48,6 +48,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 		 *             'label'       => __( 'Temporary', 'polygon' ),
 		 *             'description' => __( 'This is a temporary description.', 'polygon' ),
 		 *             'section'     => 'section_example_settings',
+		 *             'fonts'       => array(	'Open Sans', 'Noto Sans', 'Droid Sans' ),
+		 *             // If 'fonts' is available, the next parameters will not be used
 		 *             'api_key'     => 'API-KEY',
 		 *             'amount'      => 30,          // Number of fonts
 		 *             'cache_time'  => 30,          // Number of days
@@ -99,6 +101,16 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 
 
 
+			/**
+			 * Specific fonts to display.
+			 *
+			 * @since    1.0.0
+			 * @var      string
+			 */
+			public $fonts = null;
+
+
+
 
 
 			/**
@@ -109,10 +121,19 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 			 * @since    1.0.0
 			 */
 			public function render_content() {
-				$fonts = $this->get_fonts();
-
-				if ( ! $fonts ) {
-					return;
+				if ( $this->fonts ) {
+					if ( is_array( $this->fonts ) ) {
+						$fonts = $this->fonts;
+					}
+					else {
+						return;
+					}
+				}
+				else {
+					$fonts = $this->get_fonts();
+					if ( ! $fonts ) {
+						return;
+					}
 				}
 
 				?>
@@ -130,9 +151,15 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 
 					<select <?php $this->link(); ?>>
 						<?php
-							foreach ( $fonts as $key => $value )
-							{
-								printf( '<option value="%s" %s>%s</option>', $value->family, selected( $this->value(), $value->family ), $value->family );
+							if ( $this->fonts ) {
+								foreach ( $fonts as $font ) {
+									printf( '<option value="%s" %s>%s</option>', $font, selected( $this->value(), $font ), $font );
+								}
+							}
+							else {
+								foreach ( $fonts as $font => $value ) {
+									printf( '<option value="%s" %s>%s</option>', $value->family, selected( $this->value(), $value->family ), $value->family );
+								}
 							}
 						?>
 					</select>

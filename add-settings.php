@@ -510,6 +510,8 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 					'label'       => __( 'Google Fonts Option', 'polygon' ),
 					'description' => __( 'This is an example control for a custom google fonts option.', 'polygon' ),
 					'section'     => 'section_advanced_settings',
+					'fonts'       => array(	'Open Sans', 'Noto Sans', 'Droid Sans' ),
+					// If 'fonts' is available, the next parameters will not be used
 					'api_key'     => 'API-KEY',
 					'amount'      => 'all',        // Number of fonts: number or 'all'
 					'cache_time'  => 30,           // Number of days to cache
