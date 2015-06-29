@@ -459,7 +459,7 @@ if ( ! function_exists( 'polygon_sanitize_html' ) ) {
 	 * - Sanitization: html
 	 * - Control:      text, textarea
 	 *
-	 * Note: wp_filter_post_kses() can be passed directly to the 'sanitize_callback'. This
+	 * Note: wp_kses_post() can be passed directly to the 'sanitize_callback'. This
 	 * function is a simple wrapper for it.
 	 *
 	 * @since     1.0.0
@@ -467,7 +467,7 @@ if ( ! function_exists( 'polygon_sanitize_html' ) ) {
 	 * @return    string             Sanitized HTML.
 	 */
 	function polygon_sanitize_html( $html ) {
-		return wp_filter_post_kses( $html );
+		return wp_kses_post( $html );
 	}
 
 }
