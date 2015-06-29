@@ -127,7 +127,10 @@ if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) )
 
 					<script>
 						jQuery( document ).ready( function() {
-							// Change value from span.numeric-slider-value
+							jQuery( '#numeric-slider-<?php echo sanitize_title_with_dashes( $this->id )?> input[type="range"]' ).on( 'change mousemove', function() {
+								var active_range = jQuery( this );
+								active_range.prev().text( active_range.val() );
+							} );
 						} );
 					</script>
 				<?php
