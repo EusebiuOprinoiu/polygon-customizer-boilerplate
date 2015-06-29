@@ -1,0 +1,62 @@
+/*====================================================================*/
+/* GENERAL STYLES                                                     */
+/*====================================================================*/
+
+.wp-full-overlay-sidebar input[type="text"],
+.wp-full-overlay-sidebar input[type="url"],
+.wp-full-overlay-sidebar input[type="email"],
+.wp-full-overlay-sidebar input[type="number"],
+.wp-full-overlay-sidebar input[type="tel"],
+.wp-full-overlay-sidebar input[type="time"],
+.wp-full-overlay-sidebar input[type="date"],
+.wp-full-overlay-sidebar input[type="datetime"],
+.wp-full-overlay-sidebar input[type="datetime-local"],
+.wp-full-overlay-sidebar input[type="week"],
+.wp-full-overlay-sidebar input[type="month"],
+.wp-full-overlay-sidebar input[type="search"],
+.wp-full-overlay-sidebar input[type="password"],
+.wp-full-overlay-sidebar select,
+.wp-full-overlay-sidebar textarea {
+	width: 100%;
+}
+
+.wp-full-overlay-sidebar .customize-control-checkbox label,
+.wp-full-overlay-sidebar .customize-control-checkbox-multiple label,
+.wp-full-overlay-sidebar input[type="checkbox"] {
+	line-height: 22px;
+}
+
+.wp-full-overlay-sidebar .customize-control-radio label,
+.wp-full-overlay-sidebar input[type="radio"] {
+	line-height: 30px;
+}
+
+.wp-full-overlay-sidebar .customize-control-image .container,
+.wp-full-overlay-sidebar .customize-control-upload .container {
+	min-height: 20px;
+	background-color: #f5f5f5;
+}
+
+.wp-full-overlay-sidebar .customize-control-image .placeholder,
+.wp-full-overlay-sidebar .customize-control-upload .placeholder {
+	min-height: 40px;
+}
+
+.wp-full-overlay-sidebar .customize-control-image img,
+.wp-full-overlay-sidebar .customize-control-upload img {
+	width: auto;
+}
+
+.wp-full-overlay-sidebar .customize-control-description {
+	margin-bottom: 13px;
+}
+
+
+
+
+
+/*====================================================================*/
+/* THEME-SPECIFIC STYLES                                              */
+/*====================================================================*/
+
+/* Use spacing of 25px or 50px between elements */
