@@ -34,11 +34,11 @@ if ( ! function_exists( 'polygon_register_customizer_sections' ) ) {
 		 * customizer section.
 		 */
 		$wp_customize->add_section(
-			'section_example_settings',
+			'example_settings_section',
 			array(
 				'title'           => __( 'Example Settings', 'polygon' ),
 				'description'     => __( 'This is an example section you can use as a starting point for new customizer sections.' ),
-				'panel'           => 'panel_example',
+				'panel'           => 'example_panel',
 				'priority'        => 10,
 				'capability'      => 'edit_theme_options',
 				'theme_supports'  => 'polygon-portfolio',
@@ -57,10 +57,10 @@ if ( ! function_exists( 'polygon_register_customizer_sections' ) ) {
 		 * Use it to contain basic settings / controls.
 		 */
 		$wp_customize->add_section(
-			'section_basic_settings',
+			'basic_settings_section',
 			array(
 				'title'           => __( 'Basic Settings', 'polygon' ),
-				'panel'           => 'panel_example',
+				'panel'           => 'example_panel',
 			)
 		);
 
@@ -75,10 +75,10 @@ if ( ! function_exists( 'polygon_register_customizer_sections' ) ) {
 		 * Use it to contain advanced or custom settings / controls.
 		 */
 		$wp_customize->add_section(
-			'section_advanced_settings',
+			'advanced_settings_section',
 			array(
 				'title'           => __( 'Advanced Settings', 'polygon' ),
-				'panel'           => 'panel_example',
+				'panel'           => 'example_panel',
 			)
 		);
 

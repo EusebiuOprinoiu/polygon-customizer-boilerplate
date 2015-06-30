@@ -52,7 +52,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				'label'           => __( 'Basic Example Option', 'polygon' ),
 				'description'     => __( 'This is an example control you can use as a starting point for new customizer controls.', 'polygon' ),
 				'settings'        => 'basic_example_option',
-				'section'         => 'section_example_settings',
+				'section'         => 'example_settings_section',
 				'priority'        => 10,                                      // Priority within the section
 				'type'            => 'checkbox',
 				'active_callback' => 'active_callback_function',
@@ -90,7 +90,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 					'label'           => __( 'Advanced Example Option', 'polygon' ),
 					'description'     => __( 'This is an example control you can use as a starting point for new customizer controls.', 'polygon' ),
 					'settings'        => 'advanced_example_option',
-					'section'         => 'section_example_settings',
+					'section'         => 'example_settings_section',
 					'priority'        => 10,                                  // Priority within the section
 					'active_callback' => 'active_callback_function',
 				)
@@ -127,7 +127,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			array(
 				'label'       => __( 'Text Option', 'polygon' ),
 				'description' => __( 'This is an example control for a basic text option.', 'polygon' ),
-				'section'     => 'section_basic_settings',
+				'section'     => 'basic_settings_section',
 				'type'        => 'text',
 				'input_attrs' => array(
 					// $key => $value pairs for input attributes
@@ -161,7 +161,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			array(
 				'label'       => __( 'Textarea Option', 'polygon' ),
 				'description' => __( 'This is an example control for a basic textarea option.', 'polygon' ),
-				'section'     => 'section_basic_settings',
+				'section'     => 'basic_settings_section',
 				'type'        => 'textarea',
 			)
 		);
@@ -189,7 +189,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			array(
 				'label'       => __( 'Checkbox Option', 'polygon' ),
 				'description' => __( 'This is an example control for a basic checkbox option.', 'polygon' ),
-				'section'     => 'section_basic_settings',
+				'section'     => 'basic_settings_section',
 				'type'        => 'checkbox',
 			)
 		);
@@ -217,7 +217,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			array(
 				'label'       => __( 'Select Option', 'polygon' ),
 				'description' => __( 'This is an example control for a basic select option.', 'polygon' ),
-				'section'     => 'section_basic_settings',
+				'section'     => 'basic_settings_section',
 				'type'        => 'select',
 				'choices'     => array(
 					'first-option'  => 'First Option',
@@ -250,7 +250,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			array(
 				'label'       => __( 'Radio Option', 'polygon' ),
 				'description' => __( 'This is an example control for a basic radio option.', 'polygon' ),
-				'section'     => 'section_basic_settings',
+				'section'     => 'basic_settings_section',
 				'type'        => 'radio',
 				'choices'     => array(
 					'first-option'  => 'First Option',
@@ -283,7 +283,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			array(
 				'label'       => __( 'Dropdown Pages Option', 'polygon' ),
 				'description' => __( 'This is an example control for a basic dropdown-pages option.', 'polygon' ),
-				'section'     => 'section_basic_settings',
+				'section'     => 'basic_settings_section',
 				'type'        => 'dropdown-pages',
 			)
 		);
@@ -313,7 +313,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				array(
 					'label'       => __( 'Image Option', 'polygon' ),
 					'description' => __( 'This is an example control for an advanced image upload option.', 'polygon' ),
-					'section'     => 'section_advanced_settings',
+					'section'     => 'advanced_settings_section',
 				)
 			)
 		);
@@ -343,7 +343,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				array(
 					'label'       => __( 'File Upload Option', 'polygon' ),
 					'description' => __( 'This is an example control for an advanced file upload option.', 'polygon' ),
-					'section'     => 'section_advanced_settings',
+					'section'     => 'advanced_settings_section',
 				)
 			)
 		);
@@ -373,7 +373,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				array(
 					'label'       => __( 'Color Option', 'polygon' ),
 					'description' => __( 'This is an example control for an advanced color option.', 'polygon' ),
-					'section'     => 'section_advanced_settings',
+					'section'     => 'advanced_settings_section',
 				)
 			)
 		);
@@ -403,7 +403,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				array(
 					'label'       => __( 'Subsection Option', 'polygon' ),
 					'description' => __( 'This is an example control for a custom subsection option.', 'polygon' ),
-					'section'     => 'section_advanced_settings',
+					'section'     => 'advanced_settings_section',
 				)
 			)
 		);
@@ -433,7 +433,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				array(
 					'label'       => __( 'Radio Image Option', 'polygon' ),
 					'description' => __( 'This is an example control for a custom radio image option.', 'polygon' ),
-					'section'     => 'section_advanced_settings',
+					'section'     => 'advanced_settings_section',
 					'choices'     => array(
 						'first-option'  => '/link/to/image-one.png',
 						'second-option' => '/link/to/image-two.png',
@@ -469,7 +469,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				array(
 					'label'       => __( 'Multiple Checkbox Option', 'polygon' ),
 					'description' => __( 'This is an example control for a custom multiple checkbox option.', 'polygon' ),
-					'section'     => 'section_advanced_settings',
+					'section'     => 'advanced_settings_section',
 					'choices'     => array(
 						'first-option'  => __( 'First Option',  'polygon' ),
 						'second-option' => __( 'Second Option', 'polygon' ),
@@ -504,7 +504,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				array(
 					'label'       => __( 'Numeric Slider Option', 'polygon' ),
 					'description' => __( 'This is an example control for a custom numeric slider option.', 'polygon' ),
-					'section'     => 'section_advanced_settings',
+					'section'     => 'advanced_settings_section',
 					'input_attrs' => array(
 						'min'  => 1,
 						'max'  => 20,
@@ -539,7 +539,7 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				array(
 					'label'       => __( 'Google Fonts Option', 'polygon' ),
 					'description' => __( 'This is an example control for a custom google fonts option.', 'polygon' ),
-					'section'     => 'section_advanced_settings',
+					'section'     => 'advanced_settings_section',
 					'fonts'       => array(	'Open Sans', 'Noto Sans', 'Droid Sans' ),
 					// If 'fonts' is available, the next parameters will not be used
 					'api_key'     => 'API-KEY',

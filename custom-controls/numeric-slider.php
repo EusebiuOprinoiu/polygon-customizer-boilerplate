@@ -47,7 +47,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) )
 		 *         array(
 		 *             'label'       => __( 'Temporary', 'polygon' ),
 		 *             'description' => __( 'This is a temporary description.', 'polygon' ),
-		 *             'section'     => 'section_example_settings',
+		 *             'section'     => 'example_settings_section',
 		 *             'input_attrs' => array(
 		 *                 'min'  => 0,
 		 *                 'max'  => 20,

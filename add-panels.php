@@ -33,7 +33,7 @@ if ( ! function_exists( 'polygon_register_customizer_panels' ) ) {
 		 * customizer panel.
 		 */
 		$wp_customize->add_panel(
-			'panel_example',
+			'example_panel',
 			array(
 				'title'           => __( 'Example', 'polygon' ),
 				'description'     => __( 'This is an example panel you can use as a starting point for new customizer panels.', 'polygon' ),
@@ -55,7 +55,7 @@ if ( ! function_exists( 'polygon_register_customizer_panels' ) ) {
 		 * Use it for sections that control general aspects of your website.
 		 */
 		$wp_customize->add_panel(
-			'panel_general',
+			'general_panel',
 			array(
 				'title'           => __( 'General', 'polygon' ),
 				'description'     => __( 'This panel contains the sections that control general aspects of your website.', 'polygon' ),
@@ -71,10 +71,10 @@ if ( ! function_exists( 'polygon_register_customizer_panels' ) ) {
 		 * WordPress panel
 		 *
 		 * This is an aditional panel registered using only the required parameters.
-		 * Use it for sections added by default by WordPress. 
+		 * Use it for sections added by default by WordPress.
 		 */
 		$wp_customize->add_panel(
-			'panel_wordpress',
+			'wordpress_panel',
 			array(
 				'title'            => __( 'WordPress', 'polygon' ),
 				'description'      => __( 'This panel contains the sections added by default by WordPress.', 'polygon' ),

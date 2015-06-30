@@ -40,7 +40,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 		 *         array(
 		 *             'label'       => __( 'Temporary', 'polygon' ),
 		 *             'description' => __( 'This is a temporary description.', 'polygon' ),
-		 *             'section'     => 'section_example_settings',
+		 *             'section'     => 'example_settings_section',
 		 *             'choices'     => array(
 		 *                 'first-option'  => '/link/to/image-one.png',
 		 *                 'second-option' => '/link/to/image-two.png',

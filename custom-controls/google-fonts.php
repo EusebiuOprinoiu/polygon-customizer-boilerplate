@@ -47,7 +47,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 		 *         array(
 		 *             'label'       => __( 'Temporary', 'polygon' ),
 		 *             'description' => __( 'This is a temporary description.', 'polygon' ),
-		 *             'section'     => 'section_example_settings',
+		 *             'section'     => 'example_settings_section',
 		 *             'fonts'       => array(	'Open Sans', 'Noto Sans', 'Droid Sans' ),
 		 *             // If 'fonts' is available, the next parameters will not be used
 		 *             'api_key'     => 'API-KEY',
