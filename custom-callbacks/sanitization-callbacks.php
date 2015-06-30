@@ -20,7 +20,7 @@
  * - text: url
  *
  * @since      1.0.0
- * @package    Customizer Boilerplate
+ * @package    Customizer_Boilerplate
  */
 
 
@@ -174,7 +174,7 @@ if ( ! function_exists( 'polygon_sanitize_email' ) ) {
 	 * @param     string                  $email      Email address to sanitize.
 	 * @param     WP_Customize_Setting    $setting    Setting instance.
 	 * @return    string                              The sanitized email if not null. Otherwise,
-	 *                                                the setting default.
+	 *                                                The setting default.
 	 */
 	function polygon_sanitize_email( $email, $setting ) {
 		// Sanitize $email
@@ -214,7 +214,7 @@ if ( ! function_exists( 'polygon_sanitize_image' ) ) {
 	 */
 	function polygon_sanitize_image( $image, $setting ) {
 		// Accepted image types
-	    $mimes = array(
+		$mimes = array(
 			'jpg|jpeg|jpe' => 'image/jpeg',
 			'gif'          => 'image/gif',
 			'png'          => 'image/png',
@@ -496,6 +496,31 @@ if ( ! function_exists( 'polygon_sanitize_nohtml' ) ) {
 	 */
 	function polygon_sanitize_nohtml( $nohtml ) {
 		return wp_filter_nohtml_kses( $nohtml );
+	}
+
+}
+
+
+
+
+
+if ( ! function_exists( 'polygon_sanitize_null' ) ) {
+
+	/**
+	 * Sanitize Null.
+	 *
+	 * Sanitization callback for presentation elements like hidden fields or
+	 * subsections.
+	 *
+	 * - Sanitization: null
+	 * - Control:      text, subsection.
+	 *
+	 * @since     1.0.0
+	 * @param     string    $null    Option to sanitize.
+	 * @return    null               Return null.
+	 */
+	function polygon_sanitize_null( $null ) {
+		return null;
 	}
 
 }
