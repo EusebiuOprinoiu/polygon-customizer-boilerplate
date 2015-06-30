@@ -383,6 +383,36 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 
 
 		/*
+		 * Subsection Option
+		 *
+		 * This is a cutom subsection option you can use inside the WordPress customizer.
+		 * Sanitize using polygon_sanitize_null.
+		 */
+		$wp_customize->add_setting(
+			'subsection_option',
+			array(
+				'default'           => null,
+				'sanitize_callback'	=> 'polygon_sanitize_null',
+			)
+		);
+
+		$wp_customize->add_control(
+			new Polygon_Customize_Subsection_Control(
+				$wp_customize,
+				'subsection_option',
+				array(
+					'label'       => __( 'Subsection Option', 'polygon' ),
+					'description' => __( 'This is an example control for a custom subsection option.', 'polygon' ),
+					'section'     => 'section_advanced_settings',
+				)
+			)
+		);
+
+
+
+
+
+		/*
 		 * Radio Image Option
 		 *
 		 * This is a cutom radio image option you can use inside the WordPress customizer.
@@ -515,36 +545,6 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 					'api_key'     => 'API-KEY',
 					'amount'      => 'all',        // Number of fonts: number or 'all'
 					'cache_time'  => 30,           // Number of days to cache
-				)
-			)
-		);
-
-
-
-
-
-		/*
-		 * Subsection Option
-		 *
-		 * This is a cutom subsection option you can use inside the WordPress customizer.
-		 * Sanitize using polygon_sanitize_null.
-		 */
-		$wp_customize->add_setting(
-			'subsection_option',
-			array(
-				'default'           => null,
-				'sanitize_callback'	=> 'polygon_sanitize_null',
-			)
-		);
-
-		$wp_customize->add_control(
-			new Polygon_Customize_Subsection_Control(
-				$wp_customize,
-				'subsection_option',
-				array(
-					'label'       => __( 'Subsection Option', 'polygon' ),
-					'description' => __( 'This is an example control for a custom subsection option.', 'polygon' ),
-					'section'     => 'section_advanced_settings',
 				)
 			)
 		);
