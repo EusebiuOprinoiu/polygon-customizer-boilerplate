@@ -120,6 +120,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) )
 						<span class="numeric-slider-value">
 							<?php echo esc_attr( $this->value() ); ?>
 						</span>
+
 						<input type="range" value="<?php echo esc_attr( $this->value() ); ?>" min="<?php echo esc_attr( $min ); ?>" max="<?php echo esc_attr( $max ); ?>" step="<?php echo esc_attr( $step ); ?>" <?php $this->link(); ?>>
 
 						<div class="clear"></div>
@@ -159,17 +160,26 @@ if ( ! function_exists( 'polygon_customizer_control_numeric_slider_css' ) ) {
 		?>
 			<style>
 				.customize-control-numeric-slider .numeric-slider-value {
-					display: inline-block;
-					float: left;
-					width: 60px;
+					display: block;
+					color: #666666;
 					text-align: center;
-					border: #777 1px solid;
+					float: left;
+					width: 50px;
+					height: 20px;
+					line-height: 20px;
+					border: #eeeeee 1px solid;
+					background-color: #f5f5f5;
+					margin-top: 1px;
 					margin-right: 10px;
-					background-color: #f7f7f7;
+					position: absolute;
+					z-index: 999;
 				}
 
 				.customize-control-numeric-slider input[type="range"] {
-
+					display: block;
+					float: right;
+					width: 100%;
+					padding-left: 70px;
 				}
 
 				.customize-control-numeric-slider .clear {

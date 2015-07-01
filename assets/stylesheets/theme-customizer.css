@@ -2,6 +2,18 @@
 /* GENERAL STYLES                                                     */
 /*====================================================================*/
 
+/*--------------------------------------------------------------------*/
+/* Style control titles and descriptions                              */
+/*--------------------------------------------------------------------*/
+.wp-full-overlay-sidebar .customize-control-description {
+	margin-bottom: 13px;
+}
+
+
+
+/*--------------------------------------------------------------------*/
+/* Style text inputs, textarea and select                             */
+/*--------------------------------------------------------------------*/
 .wp-full-overlay-sidebar input[type="text"],
 .wp-full-overlay-sidebar input[type="url"],
 .wp-full-overlay-sidebar input[type="email"],
@@ -20,17 +32,32 @@
 	width: 100%;
 }
 
+
+
+/*--------------------------------------------------------------------*/
+/* Style checkbox inputs                                              */
+/*--------------------------------------------------------------------*/
 .wp-full-overlay-sidebar .customize-control-checkbox label,
 .wp-full-overlay-sidebar .customize-control-checkbox-multiple label,
 .wp-full-overlay-sidebar input[type="checkbox"] {
 	line-height: 22px;
 }
 
+
+
+/*--------------------------------------------------------------------*/
+/* Style radio inputs                                                 */
+/*--------------------------------------------------------------------*/
 .wp-full-overlay-sidebar .customize-control-radio label,
 .wp-full-overlay-sidebar input[type="radio"] {
 	line-height: 30px;
 }
 
+
+
+/*--------------------------------------------------------------------*/
+/* Style image and file upload                                        */
+/*--------------------------------------------------------------------*/
 .wp-full-overlay-sidebar .customize-control-image .container,
 .wp-full-overlay-sidebar .customize-control-upload .container {
 	min-height: 20px;
@@ -47,8 +74,120 @@
 	width: auto;
 }
 
-.wp-full-overlay-sidebar .customize-control-description {
-	margin-bottom: 13px;
+
+
+/*--------------------------------------------------------------------*/
+/* Style range inputs                                                 */
+/*--------------------------------------------------------------------*/
+.wp-full-overlay-sidebar input[type="range"] {
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	height: 22px;
+}
+
+/* Style range in Webkit browsers */
+.wp-full-overlay-sidebar input[type="range"] {
+	-webkit-appearance: none;
+}
+
+.wp-full-overlay-sidebar input[type="range"]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 3px;
+	border: none;
+	border-radius: 3px;
+	background-color: #e5e5e5;
+}
+
+.wp-full-overlay-sidebar input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 12px;
+	height:12px;
+	border: #d5d5d5 1px solid;
+	border-radius: 2px;
+	background-color: #ffffff;
+	margin-top: -5px;
+}
+
+.wp-full-overlay-sidebar input[type="range"]:focus {
+	outline: none;
+}
+
+.wp-full-overlay-sidebar input[type="range"]:focus::-webkit-slider-runnable-track {
+	background-color: #e0e0e0;
+}
+
+
+/* Style range in Mozilla browsers */
+.wp-full-overlay-sidebar input[type="range"]{
+	border: 1px solid #ffffff;    /* Fix for focus style bug */
+	width: 100%;                  /* Required for proper track sizing */
+}
+
+.wp-full-overlay-sidebar input[type="range"]::-moz-range-track {
+	width: 100%;
+	height: 3px;
+	border: none;
+	border-radius: 3px;
+	background-color: #e5e5e5;
+}
+
+.wp-full-overlay-sidebar input[type="range"]::-moz-range-thumb {
+	width: 10px;
+	height: 10px;
+	border: #d5d5d5 1px solid;
+	border-radius: 2px;
+	background-color: #ffffff;
+}
+
+.wp-full-overlay-sidebar input[type="range"]:-moz-focusring{
+	outline: 1px solid white;
+	outline-offset: -1px;
+}
+
+.wp-full-overlay-sidebar input[type="range"]:focus::-moz-range-track {
+	background-color: #e0e0e0;
+}
+
+
+/* Style range in Internet Explorer */
+.wp-full-overlay-sidebar input[type="range"] {
+	-ms-appearance: none;
+}
+
+.wp-full-overlay-sidebar input[type="range"]::-ms-track {
+	width: 100%;
+	height: 3px;
+	border: none;
+	border-radius: 3px;
+	background-color: #e5e5e5;
+}
+
+.wp-full-overlay-sidebar input[type="range"]::-ms-fill-upper,
+.wp-full-overlay-sidebar input[type="range"]::-ms-fill-lower {
+	background-color: #e5e5e5;
+}
+
+.wp-full-overlay-sidebar input[type="range"]::-ms-ticks,
+.wp-full-overlay-sidebar input[type="range"]::-ms-ticks-before,
+.wp-full-overlay-sidebar input[type="range"]::-ms-ticks-after {
+	display: none;    /* Not working */
+}
+
+.wp-full-overlay-sidebar input[type="range"]::-ms-thumb {
+	width: 10px;
+	height: 10px;
+	border: #d5d5d5 1px solid;
+	border-radius: 2px;
+	background-color: #ffffff;
+}
+
+.wp-full-overlay-sidebar input[type="range"]::-ms-tooltip {
+	display: none;
+}
+
+.wp-full-overlay-sidebar input[type="range"]:focus::-ms-track {
+	background-color: #e0e0e0;
 }
 
 
