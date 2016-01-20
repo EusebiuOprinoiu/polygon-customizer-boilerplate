@@ -56,19 +56,22 @@
 /* Style image and file upload                                        */
 /*--------------------------------------------------------------------*/
 .wp-full-overlay-sidebar .customize-control-image .container,
-.wp-full-overlay-sidebar .customize-control-upload .container {
+.wp-full-overlay-sidebar .customize-control-upload .container,
+.wp-full-overlay-sidebar .customize-control-site_icon .container {
 	min-height: 20px;
 	background: #e5e5e5;
 	border: 1px solid #dddddd;
 }
 
 .wp-full-overlay-sidebar .customize-control-image .placeholder,
-.wp-full-overlay-sidebar .customize-control-upload .placeholder {
+.wp-full-overlay-sidebar .customize-control-upload .placeholder,
+.wp-full-overlay-sidebar .customize-control-site_icon .placeholder {
 	min-height: 40px;
 }
 
 .wp-full-overlay-sidebar .customize-control-image img,
-.wp-full-overlay-sidebar .customize-control-upload img {
+.wp-full-overlay-sidebar .customize-control-upload img,
+.wp-full-overlay-sidebar .customize-control-site_icon img {
 	width: auto;
 }
 
