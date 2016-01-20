@@ -113,12 +113,12 @@ if ( ! function_exists( 'polygon_customizer_control_subsection_css' ) ) {
 		?>
 			<style>
 				.customize-control-subsection .customize-control-title {
-					font-size: 11px;
+					font-size: 12px;
 					font-weight: 400;
 					text-transform: uppercase;
-					background-color: #f5f5f5;
-					border-top: #eeeeee 1px solid;
-					border-bottom: #eeeeee 1px solid;
+					background-color: #e5e5e5;
+					border-top: #dddddd 1px solid;
+					border-bottom: #dddddd 1px solid;
 					padding: 4px 20px;
 					margin: 0 -20px 9px -20px;
 				}

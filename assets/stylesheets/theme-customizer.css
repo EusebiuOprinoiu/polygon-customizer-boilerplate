@@ -37,10 +37,8 @@
 /*--------------------------------------------------------------------*/
 /* Style checkbox inputs                                              */
 /*--------------------------------------------------------------------*/
-.wp-full-overlay-sidebar .customize-control-checkbox label,
-.wp-full-overlay-sidebar .customize-control-checkbox-multiple label,
-.wp-full-overlay-sidebar input[type="checkbox"] {
-	line-height: 22px;
+.wp-full-overlay-sidebar .customize-control-checkbox {
+	margin-bottom: 0;
 }
 
 
@@ -48,9 +46,8 @@
 /*--------------------------------------------------------------------*/
 /* Style radio inputs                                                 */
 /*--------------------------------------------------------------------*/
-.wp-full-overlay-sidebar .customize-control-radio label,
-.wp-full-overlay-sidebar input[type="radio"] {
-	line-height: 30px;
+.wp-full-overlay-sidebar .customize-control-radio {
+	margin-bottom: 0;
 }
 
 
@@ -61,7 +58,8 @@
 .wp-full-overlay-sidebar .customize-control-image .container,
 .wp-full-overlay-sidebar .customize-control-upload .container {
 	min-height: 20px;
-	background-color: #f5f5f5;
+	background: #e5e5e5;
+	border: 1px solid #dddddd;
 }
 
 .wp-full-overlay-sidebar .customize-control-image .placeholder,
@@ -88,6 +86,7 @@
 
 /* Style range in Webkit browsers */
 .wp-full-overlay-sidebar input[type="range"] {
+	background: none;
 	-webkit-appearance: none;
 }
 
@@ -96,14 +95,14 @@
 	height: 3px;
 	border: none;
 	border-radius: 3px;
-	background-color: #e5e5e5;
+	background-color: #dddddd;
 }
 
 .wp-full-overlay-sidebar input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	width: 12px;
 	height:12px;
-	border: #d5d5d5 1px solid;
+	border: #dddddd 1px solid;
 	border-radius: 2px;
 	background-color: #ffffff;
 	margin-top: -5px;
@@ -114,13 +113,14 @@
 }
 
 .wp-full-overlay-sidebar input[type="range"]:focus::-webkit-slider-runnable-track {
-	background-color: #e0e0e0;
+	background-color: #dddddd;
 }
 
 
 /* Style range in Mozilla browsers */
-.wp-full-overlay-sidebar input[type="range"]{
-	border: 1px solid #ffffff;    /* Fix for focus style bug */
+.wp-full-overlay-sidebar input[type="range"] {
+	background: none;
+	border: 1px solid #eeeeee;    /* Fix for focus style bug */
 	width: 100%;                  /* Required for proper track sizing */
 }
 
@@ -129,13 +129,13 @@
 	height: 3px;
 	border: none;
 	border-radius: 3px;
-	background-color: #e5e5e5;
+	background-color: #dddddd;
 }
 
 .wp-full-overlay-sidebar input[type="range"]::-moz-range-thumb {
 	width: 10px;
 	height: 10px;
-	border: #d5d5d5 1px solid;
+	border: #dddddd 1px solid;
 	border-radius: 2px;
 	background-color: #ffffff;
 }
@@ -146,27 +146,28 @@
 }
 
 .wp-full-overlay-sidebar input[type="range"]:focus::-moz-range-track {
-	background-color: #e0e0e0;
+	background-color: #dddddd;
 }
 
 
 /* Style range in Internet Explorer */
 .wp-full-overlay-sidebar input[type="range"] {
+	background: none;
 	-ms-appearance: none;
 }
 
 .wp-full-overlay-sidebar input[type="range"]::-ms-track {
-	color: #e5e5e5;
+	color: #dddddd;
 	width: 100%;
 	height: 3px;
 	border: none;
 	border-radius: 3px;
-	background-color: #e5e5e5;
+	background-color: #dddddd;
 }
 
 .wp-full-overlay-sidebar input[type="range"]::-ms-fill-upper,
 .wp-full-overlay-sidebar input[type="range"]::-ms-fill-lower {
-	background-color: #e5e5e5;
+	background-color: #dddddd;
 }
 
 .wp-full-overlay-sidebar input[type="range"]::-ms-ticks,
@@ -178,7 +179,7 @@
 .wp-full-overlay-sidebar input[type="range"]::-ms-thumb {
 	width: 10px;
 	height: 10px;
-	border: #d5d5d5 1px solid;
+	border: #dddddd 1px solid;
 	border-radius: 2px;
 	background-color: #ffffff;
 }
@@ -188,9 +189,8 @@
 }
 
 .wp-full-overlay-sidebar input[type="range"]:focus::-ms-track {
-	background-color: #e0e0e0;
+	background-color: #dddddd;
 }
-
 
 
 

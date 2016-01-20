@@ -49,17 +49,17 @@ if ( ! function_exists( 'polygon_register_customizer_panels' ) ) {
 
 
 		/*
-		 * General panel
+		 * Layout panel
 		 *
 		 * This is an aditional panel registered using only the required parameters.
-		 * Use it for sections that control general aspects of your website.
+		 * Use it for sections that control how your website is displayed.
 		 */
 		$wp_customize->add_panel(
-			'general_panel',
+			'layout_panel',
 			array(
-				'title'           => __( 'General', 'polygon' ),
-				'description'     => __( 'This panel contains the sections that control general aspects of your website.', 'polygon' ),
-				'priority'        => 20,
+				'title'            => __( 'Layout', 'polygon' ),
+				'description'      => __( 'This panel contains the sections that control how your website layout is displayed.', 'polygon' ),
+				'priority'         => 20,
 			)
 		);
 
@@ -68,17 +68,17 @@ if ( ! function_exists( 'polygon_register_customizer_panels' ) ) {
 
 
 		/*
-		 * WordPress panel
+		 * General panel
 		 *
 		 * This is an aditional panel registered using only the required parameters.
-		 * Use it for sections added by default by WordPress.
+		 * Use it for sections that control general aspects of your website ond default WordPress sections.
 		 */
 		$wp_customize->add_panel(
-			'wordpress_panel',
+			'general_panel',
 			array(
-				'title'            => __( 'WordPress', 'polygon' ),
-				'description'      => __( 'This panel contains the sections added by default by WordPress.', 'polygon' ),
-				'priority'         => 30,
+				'title'           => __( 'General', 'polygon' ),
+				'description'     => __( 'This panel contains the sections that control general aspects of your website.', 'polygon' ),
+				'priority'        => 30,
 			)
 		);
 	}

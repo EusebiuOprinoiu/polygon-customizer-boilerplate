@@ -32,22 +32,22 @@ if ( ! function_exists( 'polygon_change_customizer_defaults' ) ) {
 
 
 
-		// Move default sections under the WordPress panel
-		$wp_customize->get_section( 'title_tagline' )->panel        = 'wordpress_panel';
+		// Move default sections under the General panel
+		$wp_customize->get_section( 'title_tagline' )->panel        = 'general_panel';
 		$wp_customize->get_section( 'title_tagline' )->priority     = 10;
 
 		if ( version_compare( $GLOBALS['wp_version'], '4.3', '<' ) ) {
-			$wp_customize->get_section( 'nav' )->panel              = 'wordpress_panel';
+			$wp_customize->get_section( 'nav' )->panel              = 'general_panel';
 			$wp_customize->get_section( 'nav' )->priority           = 20;
 		}
 
-		$wp_customize->get_section( 'header_image' )->panel         = 'wordpress_panel';
+		$wp_customize->get_section( 'header_image' )->panel         = 'general_panel';
 		$wp_customize->get_section( 'header_image' )->priority      = 30;
 
-		$wp_customize->get_section( 'background_image' )->panel     = 'wordpress_panel';
+		$wp_customize->get_section( 'background_image' )->panel     = 'general_panel';
 		$wp_customize->get_section( 'background_image' )->priority  = 40;
 
-		$wp_customize->get_section( 'static_front_page' )->panel    = 'wordpress_panel';
+		$wp_customize->get_section( 'static_front_page' )->panel    = 'general_panel';
 		$wp_customize->get_section( 'static_front_page' )->priority = 50;
 	}
 	add_action( 'customize_register', 'polygon_change_customizer_defaults' );

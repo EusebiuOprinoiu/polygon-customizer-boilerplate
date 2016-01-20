@@ -161,14 +161,14 @@ if ( ! function_exists( 'polygon_customizer_control_numeric_slider_css' ) ) {
 			<style>
 				.customize-control-numeric-slider .numeric-slider-value {
 					display: block;
-					color: #666666;
+					color: #555555;
 					text-align: center;
 					float: left;
 					width: 50px;
 					height: 20px;
 					line-height: 20px;
-					border: #eeeeee 1px solid;
-					background-color: #f5f5f5;
+					border: #dddddd 1px solid;
+					background-color: #e5e5e5;
 					margin-top: 1px;
 					margin-right: 10px;
 					position: absolute;
