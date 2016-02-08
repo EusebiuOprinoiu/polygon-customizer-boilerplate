@@ -95,17 +95,17 @@
 
 .wp-full-overlay-sidebar input[type="range"]::-webkit-slider-runnable-track {
 	width: 100%;
-	height: 3px;
+	height: 2px;
 	border: none;
-	border-radius: 3px;
-	background-color: #dddddd;
+	border-radius: 2px;
+	background-color: #cccccc;
 }
 
 .wp-full-overlay-sidebar input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	width: 12px;
 	height:12px;
-	border: #dddddd 1px solid;
+	border: #cccccc 1px solid;
 	border-radius: 2px;
 	background-color: #ffffff;
 	margin-top: -5px;
@@ -116,7 +116,7 @@
 }
 
 .wp-full-overlay-sidebar input[type="range"]:focus::-webkit-slider-runnable-track {
-	background-color: #dddddd;
+	background-color: #cccccc;
 }
 
 
@@ -129,16 +129,16 @@
 
 .wp-full-overlay-sidebar input[type="range"]::-moz-range-track {
 	width: 100%;
-	height: 3px;
+	height: 2px;
 	border: none;
-	border-radius: 3px;
-	background-color: #dddddd;
+	border-radius: 2px;
+	background-color: #cccccc;
 }
 
 .wp-full-overlay-sidebar input[type="range"]::-moz-range-thumb {
 	width: 10px;
 	height: 10px;
-	border: #dddddd 1px solid;
+	border: #cccccc 1px solid;
 	border-radius: 2px;
 	background-color: #ffffff;
 }
@@ -149,7 +149,7 @@
 }
 
 .wp-full-overlay-sidebar input[type="range"]:focus::-moz-range-track {
-	background-color: #dddddd;
+	background-color: #cccccc;
 }
 
 
@@ -160,17 +160,17 @@
 }
 
 .wp-full-overlay-sidebar input[type="range"]::-ms-track {
-	color: #dddddd;
+	color: #cccccc;
 	width: 100%;
-	height: 3px;
+	height: 2px;
 	border: none;
-	border-radius: 3px;
-	background-color: #dddddd;
+	border-radius: 2px;
+	background-color: #cccccc;
 }
 
 .wp-full-overlay-sidebar input[type="range"]::-ms-fill-upper,
 .wp-full-overlay-sidebar input[type="range"]::-ms-fill-lower {
-	background-color: #dddddd;
+	background-color: #cccccc;
 }
 
 .wp-full-overlay-sidebar input[type="range"]::-ms-ticks,
@@ -182,7 +182,7 @@
 .wp-full-overlay-sidebar input[type="range"]::-ms-thumb {
 	width: 10px;
 	height: 10px;
-	border: #dddddd 1px solid;
+	border: #cccccc 1px solid;
 	border-radius: 2px;
 	background-color: #ffffff;
 }
@@ -192,8 +192,9 @@
 }
 
 .wp-full-overlay-sidebar input[type="range"]:focus::-ms-track {
-	background-color: #dddddd;
+	background-color: #cccccc;
 }
+
 
 
 
