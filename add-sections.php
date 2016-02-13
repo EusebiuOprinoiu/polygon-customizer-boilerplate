@@ -4,7 +4,7 @@
  * Add sections to the WordPress customizer
  *
  * @since      1.0.0
- * @package    Customizer_Boilerplate
+ * @package    Polygon_Customizer_Boilerplate
  */
 
 
@@ -92,7 +92,7 @@ if ( ! function_exists( 'polygon_register_customizer_sections' ) ) {
 		 * Register customizer sections from external files.
 		 */
 		polygon_customizer_add_sections( 'example' );
-		polygon_customizer_add_sections( 'general' );
+		polygon_customizer_add_sections( 'layout' );
 	}
 	add_action( 'customize_register', 'polygon_register_customizer_sections' );
 

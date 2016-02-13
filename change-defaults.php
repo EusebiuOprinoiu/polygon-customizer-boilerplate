@@ -4,7 +4,7 @@
  * Change default panels and sections from the WordPress customizer
  *
  * @since      1.0.0
- * @package    Customizer_Boilerplate
+ * @package    Polygon_Customizer_Boilerplate
  */
 
 

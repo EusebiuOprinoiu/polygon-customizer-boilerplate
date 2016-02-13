@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Add settings to the Example > Advanced Settings section in the WordPress customizer
+ * Add settings to the Layout > Footer Settings section in the WordPress customizer
  *
  * @since      1.0.0
  * @package    Polygon_Customizer_Boilerplate
