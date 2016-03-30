@@ -1,14 +1,10 @@
 <?php
-
 /**
  * Register a custom Multiple Checkbox control to the WordPress customizer
  *
- * @since      1.0.0
- * @package    Polygon_Customizer_Boilerplate
+ * @since   1.0.0
+ * @package Polygon_Customizer_Boilerplate
  */
-
-
-
 
 if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' ) ) {
 
@@ -17,14 +13,13 @@ if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' 
 	 *
 	 * Register a custom Multiple Checkbox control to the WordPress customizer.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
+	 * @param array $wp_customize Array with all customizer data.
 	 */
 	function polygon_register_customizer_control_multiple_checkbox( $wp_customize ) {
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}
-
-
 
 		/**
 		 * Create a Multiple Checkbox control
@@ -37,27 +32,27 @@ if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' 
 		 *         $wp_customize,
 		 *         'temporary',
 		 *         array(
-		 *             'label'       => __( 'Temporary', 'polygon' ),
-		 *             'description' => __( 'This is a temporary description.', 'polygon' ),
+		 *             'label'       => esc_html__( 'Temporary', 'polygon' ),
+		 *             'description' => esc_html__( 'This is a temporary description.', 'polygon' ),
 		 *             'section'     => 'example_settings_section',
 		 *             'choices'     => array(
-		 *                 'first-option'  => __( 'First Option', 'polygon' ),
-		 *                 'second-option' => __( 'Second Option', 'polygon' ),
-		 *                 'third-option'  => __( 'Third Option', 'polygon' ),
+		 *                 'first-option'  => esc_html__( 'First Option', 'polygon' ),
+		 *                 'second-option' => esc_html__( 'Second Option', 'polygon' ),
+		 *                 'third-option'  => esc_html__( 'Third Option', 'polygon' ),
 		 *             )
 		 *         )
 		 *     )
 		 * );
 		 *
-		 * @since    1.0.0
+		 * @since 1.0.0
 		 */
 		class Polygon_Customize_Multiple_Checkbox_Control extends WP_Customize_Control {
 
 			/**
 			 * Control type.
 			 *
-			 * @since    1.0.0
-			 * @var      string
+			 * @since 1.0.0
+			 * @var   string
 			 */
 			public $type = 'checkbox-multiple';
 
@@ -70,7 +65,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' 
 			 *
 			 * Render our custom control inside the WordPress customizer.
 			 *
-			 * @since    1.0.0
+			 * @since 1.0.0
 			 */
 			public function render_content() {
 				if ( empty( $this->choices ) ) {
@@ -93,8 +88,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' 
 					<?php
 						if ( ! is_array( $this->value() ) ) {
 							$multi_values = explode( ', ', $this->value() );
-						}
-						else {
+						} else {
 							$multi_values = $this->value();
 						}
 					?>
@@ -131,7 +125,6 @@ if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' 
 					</script>
 				<?php
 			}
-
 		}
 	}
 	add_action( 'customize_register', 'polygon_register_customizer_control_multiple_checkbox', 0 );

@@ -1,15 +1,10 @@
 <?php
-
 /**
  * Change default panels and sections from the WordPress customizer
  *
- * @since      1.0.0
- * @package    Polygon_Customizer_Boilerplate
+ * @since   1.0.0
+ * @package Polygon_Customizer_Boilerplate
  */
-
-
-
-
 
 if ( ! function_exists( 'polygon_change_customizer_defaults' ) ) {
 
@@ -18,21 +13,18 @@ if ( ! function_exists( 'polygon_change_customizer_defaults' ) ) {
 	 *
 	 * Change default panels and sections from the WordPress customizer.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
+	 * @param array $wp_customize Array with all customizer data.
 	 */
 	function polygon_change_customizer_defaults( $wp_customize ) {
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}
 
-
-
-		// Remove default sections
+		// Remove default sections.
 		$wp_customize->remove_section( 'colors' );
 
-
-
-		// Move default sections under the General panel
+		// Move default sections under the General panel.
 		$wp_customize->get_section( 'title_tagline' )->panel        = 'general_panel';
 		$wp_customize->get_section( 'title_tagline' )->priority     = 10;
 

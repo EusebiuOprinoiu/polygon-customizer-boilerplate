@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Custom sanitization callbacks for the WordPress customizer
  *
@@ -19,13 +18,9 @@
  * - text: tel
  * - text: url
  *
- * @since      1.0.0
- * @package    Polygon_Customizer_Boilerplate
+ * @since   1.0.0
+ * @package Polygon_Customizer_Boilerplate
  */
-
-
-
-
 
 if ( ! function_exists( 'polygon_sanitize_checkbox' ) ) {
 
@@ -35,19 +30,17 @@ if ( ! function_exists( 'polygon_sanitize_checkbox' ) ) {
 	 * Sanitization callback for 'checkbox' type controls. This callback sanitizes $checked
 	 * as a boolean value, either true or false.
 	 *
-	 * @since      1.0.0
-	 * @param      bool     $checked    Whether the checkbox is checked.
-	 * @return     bool                 Whether the checkbox is checked.
+	 * @since  1.0.0
+	 * @param  bool $checked Whether the checkbox is checked.
+	 * @return bool          Whether the checkbox is checked.
 	 */
 	function polygon_sanitize_checkbox( $checked ) {
-		if ( isset( $checked ) && $checked == true ) {
+		if ( isset( $checked ) && true == $checked ) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
-
 }
 
 
@@ -65,27 +58,24 @@ if ( ! function_exists( 'polygon_sanitize_multiple_checkbox' ) ) {
 	 *
 	 * This sanitization function can be used with Polygon_Customize_Multiple_Checkbox_Control.
 	 *
-	 * @since      1.0.0
-	 * @param      string    $values    Coma-delineated string values.
-	 * @return     array                Array of sanitized values.
+	 * @since  1.0.0
+	 * @param  string $values Coma-delineated string values.
+	 * @return array          Array of sanitized values.
 	 */
 	function polygon_sanitize_multiple_checkbox( $values ) {
 		if ( ! is_array( $values ) ) {
 			$multi_values = explode( ', ', $values );
-		}
-		else {
+		} else {
 			$multi_values = $values;
 		}
 
 		if ( ! empty( $multi_values ) ) {
 			array_map( 'sanitize_text_field', $multi_values );
 			return $multi_values;
-		}
-		else {
+		} else {
 			return array();
 		}
 	}
-
 }
 
 
@@ -103,29 +93,27 @@ if ( ! function_exists( 'polygon_sanitize_select' ) ) {
 	 * - Sanitization: select
 	 * - Control:      select, radio.
 	 *
-	 * @since     1.0.0
-	 * @param     string                  $input      Slug to sanitize.
-	 * @param     WP_Customize_Setting    $setting    Setting instance.
-	 * @return    string                              Sanitized slug if it is a valid choice. Otherwise,
-	 *                                                The setting default.
+	 * @since  1.0.0
+	 * @param  string               $input   Slug to sanitize.
+	 * @param  WP_Customize_Setting $setting Setting instance.
+	 * @return string                        Sanitized slug if it is a valid choice. Otherwise,
+	 *                                       the setting default.
 	 */
 	function polygon_sanitize_select( $input, $setting ) {
 
-		// Ensure input is a slug
+		// Ensure input is a slug.
 		$input = sanitize_key( $input );
 
-		// Get list of choices associated with the setting
+		// Get list of choices associated with the setting.
 		$choices = $setting->manager->get_control( $setting->id )->choices;
 
-		// Return input or default value
+		// Return input or default value.
 		if ( array_key_exists( $input, $choices ) ) {
 			return $input;
-		}
-		else {
+		} else {
 			return $setting->default;
 		}
 	}
-
 }
 
 
@@ -145,14 +133,13 @@ if ( ! function_exists( 'polygon_sanitize_url' ) ) {
 	 * Note: esc_url_raw() can be passed directly to the 'sanitize_callback'. This function is a simple
 	 * wrapper for it.
 	 *
-	 * @since     1.0.0
-	 * @param     string    $url    URL to sanitize.
-	 * @return    string            Sanitized URL.
+	 * @since  1.0.0
+	 * @param  string $url URL to sanitize.
+	 * @return string      Sanitized URL.
 	 */
 	function polygon_sanitize_url( $url ) {
 		return esc_url_raw( $url );
 	}
-
 }
 
 
@@ -170,25 +157,23 @@ if ( ! function_exists( 'polygon_sanitize_email' ) ) {
 	 * - Sanitization: email
 	 * - Control:      text.
 	 *
-	 * @since     1.0.0
-	 * @param     string                  $email      Email address to sanitize.
-	 * @param     WP_Customize_Setting    $setting    Setting instance.
-	 * @return    string                              The sanitized email if not null. Otherwise,
-	 *                                                The setting default.
+	 * @since  1.0.0
+	 * @param  string               $email   Email address to sanitize.
+	 * @param  WP_Customize_Setting $setting Setting instance.
+	 * @return string                        The sanitized email if not null. Otherwise,
+	 *                                       the setting default.
 	 */
 	function polygon_sanitize_email( $email, $setting ) {
-		// Sanitize $email
+		// Sanitize $email.
 		$email = sanitize_email( $email );
 
-		// Return email or default value
+		// Return email or default value.
 		if ( $email ) {
 			return $email;
-		}
-		else {
+		} else {
 			return $setting->default;
 		}
 	}
-
 }
 
 
@@ -206,35 +191,33 @@ if ( ! function_exists( 'polygon_sanitize_image' ) ) {
 	 * - Sanitization: image file extension
 	 * - Control:      text, WP_Customize_Image_Control.
 	 *
-	 * @since     1.0.0
-	 * @param     string                  $image      Image filename.
-	 * @param     WP_Customize_Setting    $setting    Setting instance.
-	 * @return    string                              The image filename if the extension is allowed.
-	 *                                                Otherwise, the setting default.
+	 * @since  1.0.0
+	 * @param  string               $image   Image filename.
+	 * @param  WP_Customize_Setting $setting Setting instance.
+	 * @return string                        The image filename if the extension is allowed.
+	 *                                       Otherwise, the setting default.
 	 */
 	function polygon_sanitize_image( $image, $setting ) {
-		// Accepted image types
+		// Accepted image types.
 		$mimes = array(
 			'jpg|jpeg|jpe' => 'image/jpeg',
 			'gif'          => 'image/gif',
 			'png'          => 'image/png',
 			'bmp'          => 'image/bmp',
 			'tif|tiff'     => 'image/tiff',
-			'ico'          => 'image/x-icon'
+			'ico'          => 'image/x-icon',
 		);
 
-		// Return an array with file extension and mime_type
+		// Return an array with file extension and mime_type.
 		$file = wp_check_filetype( $image, $mimes );
 
-		// Return image or default value
+		// Return image or default value.
 		if ( $file['ext'] ) {
 			return $image;
-		}
-		else {
+		} else {
 			return $setting->default;
 		}
 	}
-
 }
 
 
@@ -252,25 +235,23 @@ if ( ! function_exists( 'polygon_sanitize_hex_color' ) ) {
 	 * - Sanitization: hex_color
 	 * - Control:      text, WP_Customize_Color_Control.
 	 *
-	 * @since     1.0.0
-	 * @param     string                  $hex_color    HEX color to sanitize.
-	 * @param     WP_Customize_Setting    $setting      Setting instance.
-	 * @return    string                                The sanitized Hex color if not null. Otherwise,
-	 *                                                  the setting default.
+	 * @since  1.0.0
+	 * @param  string               $hex_color HEX color to sanitize.
+	 * @param  WP_Customize_Setting $setting   Setting instance.
+	 * @return string                          The sanitized Hex color if not null. Otherwise,
+	 *                                         the setting default.
 	 */
 	function polygon_sanitize_hex_color( $hex_color, $setting ) {
-		// Sanitize $input as a hex value with hash
+		// Sanitize $input as a hex value with hash.
 		$hex_color = sanitize_hex_color( $hex_color );
 
-		// Return hex value or default value
+		// Return hex value or default value.
 		if ( $hex_color ) {
 			return $hex_color;
-		}
-		else {
+		} else {
 			return $setting->default;
 		}
 	}
-
 }
 
 
@@ -288,25 +269,23 @@ if ( ! function_exists( 'polygon_sanitize_dropdown_pages' ) ) {
 	 * - Sanitization: dropdown-pages
 	 * - Control:      dropdown-pages.
 	 *
-	 * @since     1.0.0
-	 * @param     int                     $page       Page ID.
-	 * @param     WP_Customize_Setting    $setting    Setting instance.
-	 * @return    int|string                          Page ID if the page is published. Otherwise,
-	 *                                                the setting default.
+	 * @since  1.0.0
+	 * @param  int                  $page_id Page ID.
+	 * @param  WP_Customize_Setting $setting Setting instance.
+	 * @return int|string                    Page ID if the page is published. Otherwise,
+	 *                                       the setting default.
 	 */
 	function polygon_sanitize_dropdown_pages( $page_id, $setting ) {
-		// Make sure $input is an absolute integer
+		// Make sure $input is an absolute integer.
 		$page_id = absint( $page_id );
 
-		// Return page ID or default value
-		if ( get_post_status( $page_id ) == 'publish' ) {
+		// Return page ID or default value.
+		if ( 'publish' == get_post_status( $page_id ) ) {
 			return $page_id;
-		}
-		else {
+		} else {
 			return $setting->default;
 		}
 	}
-
 }
 
 
@@ -324,57 +303,48 @@ if ( ! function_exists( 'polygon_sanitize_number_range' ) ) {
 	 * - Sanitization: number_range
 	 * - Control:      number, tel.
 	 *
-	 * @since     1.0.0
-	 * @param     int                     $number     Number to check within the numeric range defined by the setting.
-	 * @param     WP_Customize_Setting    $setting    Setting instance.
-	 * @return    int|string                          The number, if it is zero or greater and falls within the defined
-	 *                                                range. Otherwise, the setting default.
+	 * @since  1.0.0
+	 * @param  int                  $number  Number to check within the numeric range defined by the setting.
+	 * @param  WP_Customize_Setting $setting Setting instance.
+	 * @return int|string                    The number, if it is zero or greater and falls within the defined
+	 *                                       range. Otherwise, the setting default.
 	 */
 	function polygon_sanitize_number_range( $number, $setting ) {
 
-		// make sure input is an absolute integer
+		// Make sure input is an absolute integer.
 		$number = absint( $number );
 
-		// Get input attributes associated with the setting
+		// Get input attributes associated with the setting.
 		$atts = $setting->manager->get_control( $setting->id )->input_attrs;
 
-
-		// Get minimum number in the range
+		// Get minimum number in the range.
 		if ( isset( $atts['min'] ) ) {
 			$min = $atts['min'];
-		}
-		else {
+		} else {
 			$min = $number;
 		}
 
-
-		// Get maximum number in the range
+		// Get maximum number in the range.
 		if ( isset( $atts['max'] ) ) {
 			$max = $atts['max'];
-		}
-		else {
+		} else {
 			$max = $number;
 		}
 
-
-		// Get step
+		// Get step.
 		if ( isset( $atts['step'] ) ) {
 			$step = $atts['step'];
-		}
-		else {
+		} else {
 			$step = 1;
 		}
 
-
-		// Return number or default value
+		// Return number or default value.
 		if ( $number >= $min && $number <= $max && is_int( $number / $step ) ) {
 			return $number;
-		}
-		else {
+		} else {
 			return $setting->default;
 		}
 	}
-
 }
 
 
@@ -395,25 +365,22 @@ if ( ! function_exists( 'polygon_sanitize_number_absint' ) ) {
 	 * Note: absint() can be passed directly to the 'sanitize_callback'. This function is a simple
 	 * wrapper for it.
 	 *
-	 *
-	 * @since     1.0.0
-	 * @param     int                     $number     Number to sanitize.
-	 * @param     WP_Customize_Setting    $setting    Setting instance.
-	 * @return    int                                 Sanitized number. Otherwise, the setting default.
+	 * @since  1.0.0
+	 * @param  int                  $number  Number to sanitize.
+	 * @param  WP_Customize_Setting $setting Setting instance.
+	 * @return int                           Sanitized number. Otherwise, the setting default.
 	 */
 	function polygon_sanitize_number_absint( $number, $setting ) {
-		// Make sure $number is an absolute integer
+		// Make sure $number is an absolute integer.
 		$number = absint( $number );
 
-		// Return number or default value
+		// Return number or default value.
 		if ( $number ) {
 			return $number;
-		}
-		else {
+		} else {
 			return $setting->default;
 		}
 	}
-
 }
 
 
@@ -434,14 +401,13 @@ if ( ! function_exists( 'polygon_sanitize_css' ) ) {
 	 * Note: wp_strip_all_tags() can be passed directly to the 'sanitize_callback'. This
 	 * function is a simple wrapper for it.
 	 *
-	 * @since     1.0.0
-	 * @param     string    $css    CSS to sanitize.
-	 * @return    string            Sanitized CSS.
+	 * @since  1.0.0
+	 * @param  string $css CSS to sanitize.
+	 * @return string      Sanitized CSS.
 	 */
 	function polygon_sanitize_css( $css ) {
 		return wp_strip_all_tags( $css );
 	}
-
 }
 
 
@@ -462,14 +428,13 @@ if ( ! function_exists( 'polygon_sanitize_html' ) ) {
 	 * Note: wp_kses_post() can be passed directly to the 'sanitize_callback'. This
 	 * function is a simple wrapper for it.
 	 *
-	 * @since     1.0.0
-	 * @param     string    $html    HTML to sanitize.
-	 * @return    string             Sanitized HTML.
+	 * @since  1.0.0
+	 * @param  string $html HTML to sanitize.
+	 * @return string       Sanitized HTML.
 	 */
 	function polygon_sanitize_html( $html ) {
 		return wp_kses_post( $html );
 	}
-
 }
 
 
@@ -490,14 +455,13 @@ if ( ! function_exists( 'polygon_sanitize_nohtml' ) ) {
 	 * Note: wp_filter_nohtml_kses() can be passed directly to the 'sanitize_callback'. This
 	 * function is a simple wrapper for it.
 	 *
-	 * @since     1.0.0
-	 * @param     string    $nohtml    The no-HTML content to sanitize.
-	 * @return    string               Sanitized no-HTML content.
+	 * @since  1.0.0
+	 * @param  string $nohtml The no-HTML content to sanitize.
+	 * @return string         Sanitized no-HTML content.
 	 */
 	function polygon_sanitize_nohtml( $nohtml ) {
 		return wp_filter_nohtml_kses( $nohtml );
 	}
-
 }
 
 
@@ -515,12 +479,11 @@ if ( ! function_exists( 'polygon_sanitize_null' ) ) {
 	 * - Sanitization: null
 	 * - Control:      text, subsection.
 	 *
-	 * @since     1.0.0
-	 * @param     string    $null    Option to sanitize.
-	 * @return    null               Return null.
+	 * @since  1.0.0
+	 * @param  string $null Option to sanitize.
+	 * @return null         Return null.
 	 */
 	function polygon_sanitize_null( $null ) {
 		return null;
 	}
-
 }

@@ -1,14 +1,10 @@
 <?php
-
 /**
  * Register a custom Google Fonts control to the WordPress customizer
  *
- * @since      1.0.0
- * @package    Polygon_Customizer_Boilerplate
+ * @since   1.0.0
+ * @package Polygon_Customizer_Boilerplate
  */
-
-
-
 
 if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 
@@ -17,14 +13,13 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 	 *
 	 * Register a custom Google Fonts control to the WordPress customizer.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
+	 * @param array $wp_customize Array with all customizer data.
 	 */
 	function polygon_register_customizer_control_google_fonts( $wp_customize ) {
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}
-
-
 
 		/**
 		 * Create a Google Fonts control
@@ -45,27 +40,27 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 		 *         $wp_customize,
 		 *         'temporary',
 		 *         array(
-		 *             'label'       => __( 'Temporary', 'polygon' ),
-		 *             'description' => __( 'This is a temporary description.', 'polygon' ),
+		 *             'label'       => esc_html__( 'Temporary', 'polygon' ),
+		 *             'description' => esc_html__( 'This is a temporary description.', 'polygon' ),
 		 *             'section'     => 'example_settings_section',
 		 *             'fonts'       => array(	'Open Sans', 'Noto Sans', 'Droid Sans' ),
-		 *             // If 'fonts' is available, the next parameters will not be used
+		 *             // If 'fonts' is available, the next parameters will not be used.
 		 *             'api_key'     => 'API-KEY',
-		 *             'amount'      => 30,          // Number of fonts
-		 *             'cache_time'  => 30,          // Number of days
+		 *             'amount'      => 30,          // Number of fonts.
+		 *             'cache_time'  => 30,          // Number of days.
 		 *         )
 		 *     )
 		 * );
 		 *
-		 * @since    1.0.0
+		 * @since 1.0.0
 		 */
 		class Polygon_Customize_Google_Fonts_Control extends WP_Customize_Control {
 
 			/**
 			 * Control type.
 			 *
-			 * @since    1.0.0
-			 * @var      string
+			 * @since 1.0.0
+			 * @var   string
 			 */
 			public $type = 'google-fonts';
 
@@ -74,8 +69,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 			/**
 			 * API Key for Google Fonts.
 			 *
-			 * @since    1.0.0
-			 * @var      string
+			 * @since 1.0.0
+			 * @var   string
 			 */
 			public $api_key = null;
 
@@ -84,8 +79,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 			/**
 			 * Number of fonts to retreive.
 			 *
-			 * @since    1.0.0
-			 * @var      int|string
+			 * @since 1.0.0
+			 * @var   int|string
 			 */
 			public $amount = 'all';
 
@@ -94,8 +89,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 			/**
 			 * Cache time in days.
 			 *
-			 * @since    1.0.0
-			 * @var      int
+			 * @since 1.0.0
+			 * @var   int
 			 */
 			public $cache_time = 365;
 
@@ -104,8 +99,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 			/**
 			 * Specific fonts to display.
 			 *
-			 * @since    1.0.0
-			 * @var      string
+			 * @since 1.0.0
+			 * @var   string
 			 */
 			public $fonts = null;
 
@@ -118,18 +113,16 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 			 *
 			 * Render our custom control inside the WordPress customizer.
 			 *
-			 * @since    1.0.0
+			 * @since 1.0.0
 			 */
 			public function render_content() {
 				if ( $this->fonts ) {
 					if ( is_array( $this->fonts ) ) {
 						$fonts = $this->fonts;
-					}
-					else {
+					} else {
 						return;
 					}
-				}
-				else {
+				} else {
 					$fonts = $this->get_fonts();
 					if ( ! $fonts ) {
 						return;
@@ -155,8 +148,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 								foreach ( $fonts as $font ) {
 									printf( '<option value="%s" %s>%s</option>', $font, selected( $this->value(), $font ), $font );
 								}
-							}
-							else {
+							} else {
 								foreach ( $fonts as $font => $value ) {
 									printf( '<option value="%s" %s>%s</option>', $value->family, selected( $this->value(), $value->family ), $value->family );
 								}
@@ -175,10 +167,9 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 			 *
 			 * Get the list of Google Fonts using the API or from saved transients.
 			 *
-			 * @since     1.0.0
-			 * @access    private
-			 * @param     int      $amount    The amount of fonts to retreive.
-			 * @return    array               Array of Google Fonts.
+			 * @since  1.0.0
+			 * @access private
+			 * @return array       Array of Google Fonts.
 			 */
 			private function get_fonts() {
 				$api_key    = $this->api_key;
@@ -202,16 +193,14 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 					set_transient( 'polygon_popular_google_fonts', $content, $cache_time );
 				}
 
-				if( $this->amount == 'all' ) {
+				if ( 'all' == $this->amount ) {
 					$content = get_transient( 'polygon_google_fonts' );
 					return $content->items;
-				}
-				else {
+				} else {
 					$content = get_transient( 'polygon_popular_google_fonts' );
 					return array_slice( $content->items, 0, $this->amount );
 				}
 			}
-
 		}
 	}
 	add_action( 'customize_register', 'polygon_register_customizer_control_google_fonts', 0 );

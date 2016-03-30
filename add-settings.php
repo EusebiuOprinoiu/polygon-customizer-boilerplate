@@ -1,15 +1,10 @@
 <?php
-
 /**
  * Add settings to the WordPress customizer
  *
- * @since      1.0.0
- * @package    Polygon_Customizer_Boilerplate
+ * @since   1.0.0
+ * @package Polygon_Customizer_Boilerplate
  */
-
-
-
-
 
 if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 
@@ -18,14 +13,13 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 	 *
 	 * Add settings to the WordPress customizer.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
+	 * @param array $wp_customize Array with all customizer data.
 	 */
 	function polygon_register_customizer_settings( $wp_customize ) {
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}
-
-
 
 		/*
 		 * Basic Example Option - setting and control
@@ -37,8 +31,8 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			'basic_example_option',
 			array(
 				'default'              => null,
-				'type'                 => 'theme_mod',                        // or option
-				'transport'            => 'refresh',                          // or postMessage
+				'type'                 => 'theme_mod',                        // Or option.
+				'transport'            => 'refresh',                          // Or postMessage.
 				'capability'           => 'edit_theme_options',
 				'theme_supports'       => 'polygon-portfolio',
 				'sanitize_callback'    => 'sanitization_callback_function',
@@ -49,19 +43,15 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 		$wp_customize->add_control(
 			'basic_example_option',
 			array(
-				'label'           => __( 'Basic Example Option', 'polygon' ),
-				'description'     => __( 'This is an example control you can use as a starting point for new customizer controls.', 'polygon' ),
+				'label'           => esc_html__( 'Basic Example Option', 'polygon' ),
+				'description'     => esc_html__( 'This is an example control you can use as a starting point for new customizer controls.', 'polygon' ),
 				'settings'        => 'basic_example_option',
 				'section'         => 'example_settings_section',
-				'priority'        => 10,                                      // Priority within the section
+				'priority'        => 10,                                      // Priority within the section.
 				'type'            => 'checkbox',
 				'active_callback' => 'active_callback_function',
 			)
 		);
-
-
-
-
 
 		/*
 		 * Advanced Example Option - setting and control
@@ -73,8 +63,8 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			'advanced_example_option',
 			array(
 				'default'              => null,
-				'type'                 => 'theme_mod',                        // or option
-				'transport'            => 'refresh',                          // or postMessage
+				'type'                 => 'theme_mod',                        // Or option.
+				'transport'            => 'refresh',                          // Or postMessage.
 				'capability'           => 'edit_theme_options',
 				'theme_supports'       => 'polygon-portfolio',
 				'sanitize_callback'    => 'sanitization_callback_function',
@@ -87,19 +77,15 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				$wp_customize,
 				'advanced_example_option',
 				array(
-					'label'           => __( 'Advanced Example Option', 'polygon' ),
-					'description'     => __( 'This is an example control you can use as a starting point for new customizer controls.', 'polygon' ),
+					'label'           => esc_html__( 'Advanced Example Option', 'polygon' ),
+					'description'     => esc_html__( 'This is an example control you can use as a starting point for new customizer controls.', 'polygon' ),
 					'settings'        => 'advanced_example_option',
 					'section'         => 'example_settings_section',
-					'priority'        => 10,                                  // Priority within the section
+					'priority'        => 10,                                  // Priority within the section.
 					'active_callback' => 'active_callback_function',
 				)
 			)
 		);
-
-
-
-
 
 		/*
 		 * Text Option
@@ -118,26 +104,22 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			'text_option',
 			array(
 				'default'           => 'Default value',
-				'sanitize_callback' => 'sanitization_callback_function',    // According to the comment above
+				'sanitize_callback' => 'sanitization_callback_function',    // According to the comment above.
 			)
 		);
 
 		$wp_customize->add_control(
 			'text_option',
 			array(
-				'label'       => __( 'Text Option', 'polygon' ),
-				'description' => __( 'This is an example control for a basic text option.', 'polygon' ),
+				'label'       => esc_html__( 'Text Option', 'polygon' ),
+				'description' => esc_html__( 'This is an example control for a basic text option.', 'polygon' ),
 				'section'     => 'basic_settings_section',
 				'type'        => 'text',
 				'input_attrs' => array(
-					// $key => $value pairs for input attributes
+					// $key => $value pairs for input attributes.
 				),
 			)
 		);
-
-
-
-
 
 		/*
 		 * Textarea Option
@@ -152,23 +134,19 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			'textarea_option',
 			array(
 				'default'           => 'Default value',
-				'sanitize_callback' => 'sanitization_callback_function',    // According to the comment above
+				'sanitize_callback' => 'sanitization_callback_function',    // According to the comment above.
 			)
 		);
 
 		$wp_customize->add_control(
 			'textarea_option',
 			array(
-				'label'       => __( 'Textarea Option', 'polygon' ),
-				'description' => __( 'This is an example control for a basic textarea option.', 'polygon' ),
+				'label'       => esc_html__( 'Textarea Option', 'polygon' ),
+				'description' => esc_html__( 'This is an example control for a basic textarea option.', 'polygon' ),
 				'section'     => 'basic_settings_section',
 				'type'        => 'textarea',
 			)
 		);
-
-
-
-
 
 		/*
 		 * Checkbox Option
@@ -187,16 +165,12 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 		$wp_customize->add_control(
 			'checkbox_option',
 			array(
-				'label'       => __( 'Checkbox Option', 'polygon' ),
-				'description' => __( 'This is an example control for a basic checkbox option.', 'polygon' ),
+				'label'       => esc_html__( 'Checkbox Option', 'polygon' ),
+				'description' => esc_html__( 'This is an example control for a basic checkbox option.', 'polygon' ),
 				'section'     => 'basic_settings_section',
 				'type'        => 'checkbox',
 			)
 		);
-
-
-
-
 
 		/*
 		 * Select Option
@@ -215,21 +189,17 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 		$wp_customize->add_control(
 			'select_option',
 			array(
-				'label'       => __( 'Select Option', 'polygon' ),
-				'description' => __( 'This is an example control for a basic select option.', 'polygon' ),
+				'label'       => esc_html__( 'Select Option', 'polygon' ),
+				'description' => esc_html__( 'This is an example control for a basic select option.', 'polygon' ),
 				'section'     => 'basic_settings_section',
 				'type'        => 'select',
 				'choices'     => array(
 					'first-option'  => 'First Option',
 					'second-option' => 'Second Option',
 					'third-option'  => 'Third Option',
-				)
+				),
 			)
 		);
-
-
-
-
 
 		/*
 		 * Radio Option
@@ -248,21 +218,17 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 		$wp_customize->add_control(
 			'radio_option',
 			array(
-				'label'       => __( 'Radio Option', 'polygon' ),
-				'description' => __( 'This is an example control for a basic radio option.', 'polygon' ),
+				'label'       => esc_html__( 'Radio Option', 'polygon' ),
+				'description' => esc_html__( 'This is an example control for a basic radio option.', 'polygon' ),
 				'section'     => 'basic_settings_section',
 				'type'        => 'radio',
 				'choices'     => array(
 					'first-option'  => 'First Option',
 					'second-option' => 'Second Option',
 					'third-option'  => 'Third Option',
-				)
+				),
 			)
 		);
-
-
-
-
 
 		/*
 		 * Dropdown Pages Option
@@ -281,16 +247,12 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 		$wp_customize->add_control(
 			'dropdown_pages_option',
 			array(
-				'label'       => __( 'Dropdown Pages Option', 'polygon' ),
-				'description' => __( 'This is an example control for a basic dropdown-pages option.', 'polygon' ),
+				'label'       => esc_html__( 'Dropdown Pages Option', 'polygon' ),
+				'description' => esc_html__( 'This is an example control for a basic dropdown-pages option.', 'polygon' ),
 				'section'     => 'basic_settings_section',
 				'type'        => 'dropdown-pages',
 			)
 		);
-
-
-
-
 
 		/*
 		 * Image Upload Option
@@ -311,16 +273,12 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				$wp_customize,
 				'image_upload_option',
 				array(
-					'label'       => __( 'Image Option', 'polygon' ),
-					'description' => __( 'This is an example control for an advanced image upload option.', 'polygon' ),
+					'label'       => esc_html__( 'Image Option', 'polygon' ),
+					'description' => esc_html__( 'This is an example control for an advanced image upload option.', 'polygon' ),
 					'section'     => 'advanced_settings_section',
 				)
 			)
 		);
-
-
-
-
 
 		/*
 		 * File Upload Option
@@ -341,16 +299,12 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				$wp_customize,
 				'file_upload_option',
 				array(
-					'label'       => __( 'File Upload Option', 'polygon' ),
-					'description' => __( 'This is an example control for an advanced file upload option.', 'polygon' ),
+					'label'       => esc_html__( 'File Upload Option', 'polygon' ),
+					'description' => esc_html__( 'This is an example control for an advanced file upload option.', 'polygon' ),
 					'section'     => 'advanced_settings_section',
 				)
 			)
 		);
-
-
-
-
 
 		/*
 		 * Color Option
@@ -371,16 +325,12 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				$wp_customize,
 				'color_option',
 				array(
-					'label'       => __( 'Color Option', 'polygon' ),
-					'description' => __( 'This is an example control for an advanced color option.', 'polygon' ),
+					'label'       => esc_html__( 'Color Option', 'polygon' ),
+					'description' => esc_html__( 'This is an example control for an advanced color option.', 'polygon' ),
 					'section'     => 'advanced_settings_section',
 				)
 			)
 		);
-
-
-
-
 
 		/*
 		 * Subsection Option
@@ -401,16 +351,12 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				$wp_customize,
 				'subsection_option',
 				array(
-					'label'       => __( 'Subsection Option', 'polygon' ),
-					'description' => __( 'This is an example control for a custom subsection option.', 'polygon' ),
+					'label'       => esc_html__( 'Subsection Option', 'polygon' ),
+					'description' => esc_html__( 'This is an example control for a custom subsection option.', 'polygon' ),
 					'section'     => 'advanced_settings_section',
 				)
 			)
 		);
-
-
-
-
 
 		/*
 		 * Radio Image Option
@@ -431,8 +377,8 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				$wp_customize,
 				'radio_image_option',
 				array(
-					'label'       => __( 'Radio Image Option', 'polygon' ),
-					'description' => __( 'This is an example control for a custom radio image option.', 'polygon' ),
+					'label'       => esc_html__( 'Radio Image Option', 'polygon' ),
+					'description' => esc_html__( 'This is an example control for a custom radio image option.', 'polygon' ),
 					'section'     => 'advanced_settings_section',
 					'choices'     => array(
 						'first-option'  => '/link/to/image-one.png',
@@ -443,10 +389,6 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				)
 			)
 		);
-
-
-
-
 
 		/*
 		 * Multiple Checkbox Option
@@ -467,21 +409,17 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				$wp_customize,
 				'multiple_checkbox_option',
 				array(
-					'label'       => __( 'Multiple Checkbox Option', 'polygon' ),
-					'description' => __( 'This is an example control for a custom multiple checkbox option.', 'polygon' ),
+					'label'       => esc_html__( 'Multiple Checkbox Option', 'polygon' ),
+					'description' => esc_html__( 'This is an example control for a custom multiple checkbox option.', 'polygon' ),
 					'section'     => 'advanced_settings_section',
 					'choices'     => array(
-						'first-option'  => __( 'First Option',  'polygon' ),
-						'second-option' => __( 'Second Option', 'polygon' ),
-						'third-option'  => __( 'Third Option',  'polygon' ),
-					)
+						'first-option'  => esc_html__( 'First Option',  'polygon' ),
+						'second-option' => esc_html__( 'Second Option', 'polygon' ),
+						'third-option'  => esc_html__( 'Third Option',  'polygon' ),
+					),
 				)
 			)
 		);
-
-
-
-
 
 		/*
 		 * Numeric Slider Option
@@ -502,21 +440,17 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				$wp_customize,
 				'numeric_slider_option',
 				array(
-					'label'       => __( 'Numeric Slider Option', 'polygon' ),
-					'description' => __( 'This is an example control for a custom numeric slider option.', 'polygon' ),
+					'label'       => esc_html__( 'Numeric Slider Option', 'polygon' ),
+					'description' => esc_html__( 'This is an example control for a custom numeric slider option.', 'polygon' ),
 					'section'     => 'advanced_settings_section',
 					'input_attrs' => array(
 						'min'  => 1,
 						'max'  => 20,
 						'step' => 1,
-					)
+					),
 				)
 			)
 		);
-
-
-
-
 
 		/*
 		 * Google Fonts Option
@@ -537,21 +471,17 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				$wp_customize,
 				'google_fonts_option',
 				array(
-					'label'       => __( 'Google Fonts Option', 'polygon' ),
-					'description' => __( 'This is an example control for a custom google fonts option.', 'polygon' ),
+					'label'       => esc_html__( 'Google Fonts Option', 'polygon' ),
+					'description' => esc_html__( 'This is an example control for a custom google fonts option.', 'polygon' ),
 					'section'     => 'advanced_settings_section',
-					'fonts'       => array(	'Open Sans', 'Noto Sans', 'Droid Sans' ),
-					// If 'fonts' is available, the next parameters will not be used
+					'fonts'       => array( 'Open Sans', 'Noto Sans', 'Droid Sans' ),
+					// If 'fonts' is available, the next parameters will not be used.
 					'api_key'     => 'API-KEY',
-					'amount'      => 'all',        // Number of fonts: number or 'all'
-					'cache_time'  => 30,           // Number of days to cache
+					'amount'      => 'all',        // Number of fonts: number or 'all'.
+					'cache_time'  => 30,           // Number of days to cache.
 				)
 			)
 		);
-
-
-
-
 
 		/*
 		 * Register settings from partials
@@ -577,25 +507,23 @@ if ( ! function_exists( 'polygon_customizer_add_settings' ) ) {
 	 * Helper function that loads the partials for the WordPress customizer settings.
 	 * Must be called in the polygon_register_customizer_settings() function declared above.
 	 *
-	 * @since    1.0.0
-	 * @param    string    $panel      Parent panel for the section stored in $section.
-	 * @param    string    $section    Section where the settings are defined.
+	 * @since 1.0.0
+	 * @param string $panel   Parent panel for the section stored in $section.
+	 * @param string $section Section where the settings are defined.
 	 */
 	function polygon_customizer_add_settings( $panel, $section ) {
-		// Global variables
+		// Global variables.
 		global $wp_customize;
 
-		// Sanitize strings
+		// Sanitize strings.
 		$panel   = sanitize_title_with_dashes( $panel );
 		$section = sanitize_title_with_dashes( $section );
 
-		// Load customizer partials
+		// Load customizer partials.
 		if ( $panel ) {
-			require( get_template_directory() . '/includes/customizer/partials/' . $panel . '/' . $section . '/' . 'add-settings.php' );
-		}
-		else {
-			require( get_template_directory() . '/includes/customizer/partials/' . $section . '/' . 'add-settings.php' );
+			require( get_template_directory() . '/includes/customizer/partials/' . $panel . '/' . $section . '/add-settings.php' );
+		} else {
+			require( get_template_directory() . '/includes/customizer/partials/' . $section . '/add-settings.php' );
 		}
 	}
-
 }

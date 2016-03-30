@@ -1,14 +1,10 @@
 <?php
-
 /**
  * Register a custom Radio Image control to the WordPress customizer
  *
- * @since      1.0.0
- * @package    Polygon_Customizer_Boilerplate
+ * @since   1.0.0
+ * @package Polygon_Customizer_Boilerplate
  */
-
-
-
 
 if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 
@@ -17,14 +13,13 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 	 *
 	 * Register a custom Radio Image control to the WordPress customizer.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
+	 * @param array $wp_customize Array with all customizer data.
 	 */
 	function polygon_register_customizer_control_radio_image( $wp_customize ) {
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}
-
-
 
 		/**
 		 * Create a Radio Image control
@@ -38,8 +33,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 		 *         $wp_customize,
 		 *         'temporary',
 		 *         array(
-		 *             'label'       => __( 'Temporary', 'polygon' ),
-		 *             'description' => __( 'This is a temporary description.', 'polygon' ),
+		 *             'label'       => esc_html__( 'Temporary', 'polygon' ),
+		 *             'description' => esc_html__( 'This is a temporary description.', 'polygon' ),
 		 *             'section'     => 'example_settings_section',
 		 *             'choices'     => array(
 		 *                 'first-option'  => '/link/to/image-one.png',
@@ -53,15 +48,15 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 		 *
 		 * The control accepts up to 10 columns.
 		 *
-		 * @since    1.0.0
+		 * @since 1.0.0
 		 */
 		class Polygon_Customize_Radio_Image_Control extends WP_Customize_Control {
 
 			/**
 			 * Control type.
 			 *
-			 * @since    1.0.0
-			 * @var      string
+			 * @since 1.0.0
+			 * @var   string
 			 */
 			public $type = 'radio-image';
 
@@ -70,8 +65,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 			/**
 			 * Number of columns.
 			 *
-			 * @since    1.0.0
-			 * @var      string
+			 * @since 1.0.0
+			 * @var   string
 			 */
 			public $columns;
 
@@ -85,7 +80,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 			 * Scripts are hooked at 'customize_controls_enqueue_scripts' and styles at
 			 * 'customize_controls_print_styles'.
 			 *
-			 * @since    1.0.0
+			 * @since 1.0.0
 			 */
 			public function enqueue() {
 				wp_enqueue_script( 'jquery-ui-button' );
@@ -99,7 +94,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 			 *
 			 * Render our custom control inside the WordPress customizer.
 			 *
-			 * @since    1.0.0
+			 * @since 1.0.0
 			 */
 			public function render_content() {
 				if ( empty( $this->choices ) ) {
@@ -152,10 +147,10 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 						</span>
 					<?php } ?>
 
-					<div id="radio-image-<?php echo sanitize_title_with_dashes( $this->id ); ?>" class="image <?php echo sanitize_html_class( $columns ); ?>">
+					<div id="radio-image-<?php echo esc_attr( sanitize_title_with_dashes( $this->id ) ); ?>" class="image <?php echo esc_attr( sanitize_html_class( $columns ) ); ?>">
 						<?php foreach ( $this->choices as $value => $label ) { ?>
 
-							<input type="radio" id="<?php echo sanitize_title_with_dashes( $this->id . '-' . $value ); ?>" name="customize-radio-<?php echo sanitize_title_with_dashes( $this->id ); ?>" value="<?php echo esc_attr( $value ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?>>
+							<input type="radio" id="<?php echo esc_attr( sanitize_title_with_dashes( $this->id . '-' . $value ) ); ?>" name="customize-radio-<?php echo esc_attr( sanitize_title_with_dashes( $this->id ) ); ?>" value="<?php echo esc_attr( $value ) ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?>>
 								<label for="<?php echo esc_attr( $this->id . '-' . $value ); ?>">
 									<img src="<?php echo esc_html( $label ); ?>" alt="<?php echo esc_attr( $value ); ?>" title="<?php echo esc_attr( $value ); ?>">
 								</label>
@@ -166,12 +161,11 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 
 					<script>
 						jQuery( document ).ready( function() {
-							jQuery( '[id="radio-image-<?php echo sanitize_title_with_dashes( $this->id ); ?>"]' ).buttonset();
+							jQuery( '[id="radio-image-<?php echo esc_attr( sanitize_title_with_dashes( $this->id ) ); ?>"]' ).buttonset();
 						} );
 					</script>
 				<?php
 			}
-
 		}
 	}
 	add_action( 'customize_register', 'polygon_register_customizer_control_radio_image', 0 );
@@ -189,7 +183,7 @@ if ( ! function_exists( 'polygon_customizer_control_radio_image_css' ) ) {
 	 *
 	 * Style the custom Radio Image control inside the customizer.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
 	 */
 	function polygon_customizer_control_radio_image_css() {
 		?>

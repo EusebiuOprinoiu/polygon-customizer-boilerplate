@@ -1,14 +1,10 @@
 <?php
-
 /**
  * Register a custom Numeric Slider control to the WordPress customizer
  *
- * @since      1.0.0
- * @package    Polygon_Customizer_Boilerplate
+ * @since   1.0.0
+ * @package Polygon_Customizer_Boilerplate
  */
-
-
-
 
 if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) ) {
 
@@ -17,14 +13,13 @@ if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) )
 	 *
 	 * Register a custom Numeric Slider control to the WordPress customizer.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
+	 * @param array $wp_customize Array with all customizer data.
 	 */
 	function polygon_register_customizer_control_numeric_slider( $wp_customize ) {
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}
-
-
 
 		/**
 		 * Create a Numeric Slider control
@@ -45,8 +40,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) )
 		 *         $wp_customize,
 		 *         'temporary',
 		 *         array(
-		 *             'label'       => __( 'Temporary', 'polygon' ),
-		 *             'description' => __( 'This is a temporary description.', 'polygon' ),
+		 *             'label'       => esc_html__( 'Temporary', 'polygon' ),
+		 *             'description' => esc_html__( 'This is a temporary description.', 'polygon' ),
 		 *             'section'     => 'example_settings_section',
 		 *             'input_attrs' => array(
 		 *                 'min'  => 0,
@@ -57,15 +52,15 @@ if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) )
 		 *     )
 		 * );
 		 *
-		 * @since    1.0.0
+		 * @since 1.0.0
 		 */
 		class Polygon_Customize_Numeric_Slider_Control extends WP_Customize_Control {
 
 			/**
 			 * Control type.
 			 *
-			 * @since    1.0.0
-			 * @var      string
+			 * @since 1.0.0
+			 * @var   string
 			 */
 			public $type = 'numeric-slider';
 
@@ -77,29 +72,24 @@ if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) )
 			 *
 			 * Render our custom control inside the WordPress customizer.
 			 *
-			 * @since    1.0.0
+			 * @since 1.0.0
 			 */
 			public function render_content() {
 				if ( ! isset( $this->input_attrs['min'] ) ) {
 					$min = 0;
-				}
-				else {
+				} else {
 					$min = $this->input_attrs['min'];
 				}
 
-
 				if ( ! isset( $this->input_attrs['max'] ) ) {
 					$max = 9999;
-				}
-				else {
+				} else {
 					$max = $this->input_attrs['max'];
 				}
 
-
 				if ( ! isset( $this->input_attrs['step'] ) ) {
 					$step = 1;
-				}
-				else {
+				} else {
 					$step = $this->input_attrs['step'];
 				}
 
@@ -116,7 +106,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) )
 						</span>
 					<?php } ?>
 
-					<div id="numeric-slider-<?php echo sanitize_title_with_dashes( $this->id ); ?>" class="numeric-slider">
+					<div id="numeric-slider-<?php echo esc_attr( sanitize_title_with_dashes( $this->id ) ); ?>" class="numeric-slider">
 						<span class="numeric-slider-value">
 							<?php echo esc_attr( $this->value() ); ?>
 						</span>
@@ -128,7 +118,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) )
 
 					<script>
 						jQuery( document ).ready( function() {
-							jQuery( '#numeric-slider-<?php echo sanitize_title_with_dashes( $this->id )?> input[type="range"]' ).on( 'change mousemove', function() {
+							jQuery( '#numeric-slider-<?php echo esc_attr( sanitize_title_with_dashes( $this->id ) )?> input[type="range"]' ).on( 'change mousemove', function() {
 								var active_range = jQuery( this );
 								active_range.prev().text( active_range.val() );
 							} );
@@ -136,7 +126,6 @@ if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) )
 					</script>
 				<?php
 			}
-
 		}
 	}
 	add_action( 'customize_register', 'polygon_register_customizer_control_numeric_slider', 0 );
@@ -154,7 +143,7 @@ if ( ! function_exists( 'polygon_customizer_control_numeric_slider_css' ) ) {
 	 *
 	 * Style the custom Numeric Slider control inside the customizer.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
 	 */
 	function polygon_customizer_control_numeric_slider_css() {
 		?>
