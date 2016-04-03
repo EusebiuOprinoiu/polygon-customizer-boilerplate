@@ -6,8 +6,11 @@
  * @package Polygon_Customizer_Boilerplate
  */
 
-if ( ! function_exists( 'polygon_change_customizer_defaults' ) ) {
 
+
+
+
+if ( ! function_exists( 'polygon_change_customizer_defaults' ) ) {
 	/**
 	 * Change customizer defaults.
 	 *
@@ -21,8 +24,12 @@ if ( ! function_exists( 'polygon_change_customizer_defaults' ) ) {
 			return;
 		}
 
+
+
 		// Remove default sections.
 		$wp_customize->remove_section( 'colors' );
+
+
 
 		// Move default sections under the General panel.
 		$wp_customize->get_section( 'title_tagline' )->panel        = 'general_panel';
@@ -43,5 +50,4 @@ if ( ! function_exists( 'polygon_change_customizer_defaults' ) ) {
 		$wp_customize->get_section( 'static_front_page' )->priority = 50;
 	}
 	add_action( 'customize_register', 'polygon_change_customizer_defaults' );
-
 }

@@ -6,8 +6,11 @@
  * @package Polygon_Customizer_Boilerplate
  */
 
-if ( ! function_exists( 'polygon_active_callbacks' ) ) {
 
+
+
+
+if ( ! function_exists( 'polygon_active_callbacks' ) ) {
 	/**
 	 * Active callback.
 	 *
@@ -28,6 +31,8 @@ if ( ! function_exists( 'polygon_active_callbacks' ) ) {
 		if ( 'temporary_option_two' == $control_id && 'second-option' == $setting_value ) {
 			return true;
 		}
+
+
 
 		// Return false if no conditions are met.
 		return false;

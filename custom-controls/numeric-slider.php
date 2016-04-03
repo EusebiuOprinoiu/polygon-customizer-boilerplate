@@ -6,8 +6,11 @@
  * @package Polygon_Customizer_Boilerplate
  */
 
-if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) ) {
 
+
+
+
+if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) ) {
 	/**
 	 * Register Numeric Slider control.
 	 *
@@ -20,6 +23,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) )
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}
+
+
 
 		/**
 		 * Create a Numeric Slider control
@@ -129,7 +134,6 @@ if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) )
 		}
 	}
 	add_action( 'customize_register', 'polygon_register_customizer_control_numeric_slider', 0 );
-
 }
 
 
@@ -137,7 +141,6 @@ if ( ! function_exists( 'polygon_register_customizer_control_numeric_slider' ) )
 
 
 if ( ! function_exists( 'polygon_customizer_control_numeric_slider_css' ) ) {
-
 	/**
 	 * Style Numeric Slider control.
 	 *
@@ -178,5 +181,4 @@ if ( ! function_exists( 'polygon_customizer_control_numeric_slider_css' ) ) {
 		<?php
 	}
 	add_action( 'customize_controls_print_styles', 'polygon_customizer_control_numeric_slider_css' );
-
 }

@@ -22,8 +22,11 @@
  * @package Polygon_Customizer_Boilerplate
  */
 
-if ( ! function_exists( 'polygon_sanitize_checkbox' ) ) {
 
+
+
+
+if ( ! function_exists( 'polygon_sanitize_checkbox' ) ) {
 	/**
 	 * Sanitize checkbox.
 	 *
@@ -48,7 +51,6 @@ if ( ! function_exists( 'polygon_sanitize_checkbox' ) ) {
 
 
 if ( ! function_exists( 'polygon_sanitize_multiple_checkbox' ) ) {
-
 	/**
 	 * Sanitize multiple checkbox.
 	 *
@@ -83,7 +85,6 @@ if ( ! function_exists( 'polygon_sanitize_multiple_checkbox' ) ) {
 
 
 if ( ! function_exists( 'polygon_sanitize_select' ) ) {
-
 	/**
 	 * Sanitize select.
 	 *
@@ -100,7 +101,6 @@ if ( ! function_exists( 'polygon_sanitize_select' ) ) {
 	 *                                       the setting default.
 	 */
 	function polygon_sanitize_select( $input, $setting ) {
-
 		// Ensure input is a slug.
 		$input = sanitize_key( $input );
 
@@ -121,7 +121,6 @@ if ( ! function_exists( 'polygon_sanitize_select' ) ) {
 
 
 if ( ! function_exists( 'polygon_sanitize_url' ) ) {
-
 	/**
 	 * URL sanitization callback example.
 	 *
@@ -147,7 +146,6 @@ if ( ! function_exists( 'polygon_sanitize_url' ) ) {
 
 
 if ( ! function_exists( 'polygon_sanitize_email' ) ) {
-
 	/**
 	 * Sanitize email.
 	 *
@@ -181,7 +179,6 @@ if ( ! function_exists( 'polygon_sanitize_email' ) ) {
 
 
 if ( ! function_exists( 'polygon_sanitize_image' ) ) {
-
 	/**
 	 * Sanitize image.
 	 *
@@ -225,7 +222,6 @@ if ( ! function_exists( 'polygon_sanitize_image' ) ) {
 
 
 if ( ! function_exists( 'polygon_sanitize_hex_color' ) ) {
-
 	/**
 	 * Sanitize Hex color.
 	 *
@@ -259,7 +255,6 @@ if ( ! function_exists( 'polygon_sanitize_hex_color' ) ) {
 
 
 if ( ! function_exists( 'polygon_sanitize_dropdown_pages' ) ) {
-
 	/**
 	 * Sanitize Drop-down Pages.
 	 *
@@ -293,7 +288,6 @@ if ( ! function_exists( 'polygon_sanitize_dropdown_pages' ) ) {
 
 
 if ( ! function_exists( 'polygon_sanitize_number_range' ) ) {
-
 	/**
 	 * Sanitize number range.
 	 *
@@ -310,7 +304,6 @@ if ( ! function_exists( 'polygon_sanitize_number_range' ) ) {
 	 *                                       range. Otherwise, the setting default.
 	 */
 	function polygon_sanitize_number_range( $number, $setting ) {
-
 		// Make sure input is an absolute integer.
 		$number = absint( $number );
 
@@ -352,7 +345,6 @@ if ( ! function_exists( 'polygon_sanitize_number_range' ) ) {
 
 
 if ( ! function_exists( 'polygon_sanitize_number_absint' ) ) {
-
 	/**
 	 * Sanitize number as absint.
 	 *
@@ -388,7 +380,6 @@ if ( ! function_exists( 'polygon_sanitize_number_absint' ) ) {
 
 
 if ( ! function_exists( 'polygon_sanitize_css' ) ) {
-
 	/**
 	 * Sanitize CSS.
 	 *
@@ -415,7 +406,6 @@ if ( ! function_exists( 'polygon_sanitize_css' ) ) {
 
 
 if ( ! function_exists( 'polygon_sanitize_html' ) ) {
-
 	/**
 	 * Sanitize HTML.
 	 *
@@ -442,7 +432,6 @@ if ( ! function_exists( 'polygon_sanitize_html' ) ) {
 
 
 if ( ! function_exists( 'polygon_sanitize_nohtml' ) ) {
-
 	/**
 	 * Sanitize No-HTML.
 	 *
@@ -469,7 +458,6 @@ if ( ! function_exists( 'polygon_sanitize_nohtml' ) ) {
 
 
 if ( ! function_exists( 'polygon_sanitize_null' ) ) {
-
 	/**
 	 * Sanitize Null.
 	 *

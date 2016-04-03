@@ -6,8 +6,11 @@
  * @package Polygon_Customizer_Boilerplate
  */
 
-if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 
+
+
+
+if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 	/**
 	 * Register Radio Image control.
 	 *
@@ -20,6 +23,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}
+
+
 
 		/**
 		 * Create a Radio Image control
@@ -169,7 +174,6 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 		}
 	}
 	add_action( 'customize_register', 'polygon_register_customizer_control_radio_image', 0 );
-
 }
 
 
@@ -177,7 +181,6 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 
 
 if ( ! function_exists( 'polygon_customizer_control_radio_image_css' ) ) {
-
 	/**
 	 * Style Radio Image control.
 	 *
@@ -258,5 +261,4 @@ if ( ! function_exists( 'polygon_customizer_control_radio_image_css' ) ) {
 		<?php
 	}
 	add_action( 'customize_controls_print_styles', 'polygon_customizer_control_radio_image_css' );
-
 }

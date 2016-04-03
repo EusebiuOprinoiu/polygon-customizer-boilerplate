@@ -6,8 +6,11 @@
  * @package Polygon_Customizer_Boilerplate
  */
 
-if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 
+
+
+
+if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 	/**
 	 * Register Google Fonts control.
 	 *
@@ -20,6 +23,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}
+
+
 
 		/**
 		 * Create a Google Fonts control
@@ -169,7 +174,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 			 *
 			 * @since  1.0.0
 			 * @access private
-			 * @return array       Array of Google Fonts.
+			 * @return array   Array of Google Fonts.
 			 */
 			private function get_fonts() {
 				$api_key    = $this->api_key;
@@ -204,5 +209,4 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 		}
 	}
 	add_action( 'customize_register', 'polygon_register_customizer_control_google_fonts', 0 );
-
 }

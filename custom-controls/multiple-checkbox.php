@@ -6,8 +6,11 @@
  * @package Polygon_Customizer_Boilerplate
  */
 
-if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' ) ) {
 
+
+
+
+if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' ) ) {
 	/**
 	 * Register Multiple Checkbox control.
 	 *
@@ -20,6 +23,8 @@ if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' 
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}
+
+
 
 		/**
 		 * Create a Multiple Checkbox control
@@ -128,5 +133,4 @@ if ( ! function_exists( 'polygon_register_customizer_control_multiple_checkbox' 
 		}
 	}
 	add_action( 'customize_register', 'polygon_register_customizer_control_multiple_checkbox', 0 );
-
 }

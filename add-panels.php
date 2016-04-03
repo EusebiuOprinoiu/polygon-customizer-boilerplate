@@ -6,8 +6,11 @@
  * @package Polygon_Customizer_Boilerplate
  */
 
-if ( ! function_exists( 'polygon_register_customizer_panels' ) ) {
 
+
+
+
+if ( ! function_exists( 'polygon_register_customizer_panels' ) ) {
 	/**
 	 * Register customizer panels.
 	 *
@@ -20,6 +23,8 @@ if ( ! function_exists( 'polygon_register_customizer_panels' ) ) {
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}
+
+
 
 		/*
 		 * Example panel
@@ -39,6 +44,10 @@ if ( ! function_exists( 'polygon_register_customizer_panels' ) ) {
 			)
 		);
 
+
+
+
+
 		/*
 		 * Layout panel
 		 *
@@ -53,6 +62,10 @@ if ( ! function_exists( 'polygon_register_customizer_panels' ) ) {
 				'priority'        => 20,
 			)
 		);
+
+
+
+
 
 		/*
 		 * General panel
@@ -70,5 +83,4 @@ if ( ! function_exists( 'polygon_register_customizer_panels' ) ) {
 		);
 	}
 	add_action( 'customize_register', 'polygon_register_customizer_panels' );
-
 }

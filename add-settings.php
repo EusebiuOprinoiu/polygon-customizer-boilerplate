@@ -6,8 +6,11 @@
  * @package Polygon_Customizer_Boilerplate
  */
 
-if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 
+
+
+
+if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 	/**
 	 * Register customizer settings.
 	 *
@@ -20,6 +23,8 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}
+
+
 
 		/*
 		 * Basic Example Option - setting and control
@@ -52,6 +57,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				'active_callback' => 'active_callback_function',
 			)
 		);
+
+
+
+
 
 		/*
 		 * Advanced Example Option - setting and control
@@ -87,6 +96,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			)
 		);
 
+
+
+
+
 		/*
 		 * Text Option
 		 *
@@ -121,6 +134,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			)
 		);
 
+
+
+
+
 		/*
 		 * Textarea Option
 		 *
@@ -148,6 +165,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			)
 		);
 
+
+
+
+
 		/*
 		 * Checkbox Option
 		 *
@@ -171,6 +192,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				'type'        => 'checkbox',
 			)
 		);
+
+
+
+
 
 		/*
 		 * Select Option
@@ -201,6 +226,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			)
 		);
 
+
+
+
+
 		/*
 		 * Radio Option
 		 *
@@ -230,6 +259,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			)
 		);
 
+
+
+
+
 		/*
 		 * Dropdown Pages Option
 		 *
@@ -253,6 +286,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				'type'        => 'dropdown-pages',
 			)
 		);
+
+
+
+
 
 		/*
 		 * Image Upload Option
@@ -280,6 +317,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			)
 		);
 
+
+
+
+
 		/*
 		 * File Upload Option
 		 *
@@ -305,6 +346,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				)
 			)
 		);
+
+
+
+
 
 		/*
 		 * Color Option
@@ -332,6 +377,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			)
 		);
 
+
+
+
+
 		/*
 		 * Subsection Option
 		 *
@@ -357,6 +406,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				)
 			)
 		);
+
+
+
+
 
 		/*
 		 * Radio Image Option
@@ -390,6 +443,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			)
 		);
 
+
+
+
+
 		/*
 		 * Multiple Checkbox Option
 		 *
@@ -420,6 +477,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				)
 			)
 		);
+
+
+
+
 
 		/*
 		 * Numeric Slider Option
@@ -452,6 +513,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			)
 		);
 
+
+
+
+
 		/*
 		 * Google Fonts Option
 		 *
@@ -483,6 +548,10 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 			)
 		);
 
+
+
+
+
 		/*
 		 * Register settings from partials
 		 *
@@ -492,7 +561,6 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 		polygon_customizer_add_settings( 'example', 'advanced-settings' );
 	}
 	add_action( 'customize_register', 'polygon_register_customizer_settings' );
-
 }
 
 
@@ -500,7 +568,6 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 
 
 if ( ! function_exists( 'polygon_customizer_add_settings' ) ) {
-
 	/**
 	 * Load partials for the customizer settings.
 	 *

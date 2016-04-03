@@ -6,8 +6,11 @@
  * @package Polygon_Customizer_Boilerplate
  */
 
-if ( ! function_exists( 'polygon_register_customizer_sections' ) ) {
 
+
+
+
+if ( ! function_exists( 'polygon_register_customizer_sections' ) ) {
 	/**
 	 * Register customizer sections.
 	 *
@@ -20,6 +23,8 @@ if ( ! function_exists( 'polygon_register_customizer_sections' ) ) {
 		if ( ! isset( $wp_customize ) ) {
 			return;
 		}
+
+
 
 		/*
 		 * Example Settings section
@@ -40,6 +45,10 @@ if ( ! function_exists( 'polygon_register_customizer_sections' ) ) {
 			)
 		);
 
+
+
+
+
 		/*
 		 * Basic Settings section
 		 *
@@ -53,6 +62,10 @@ if ( ! function_exists( 'polygon_register_customizer_sections' ) ) {
 				'panel'           => 'example_panel',
 			)
 		);
+
+
+
+
 
 		/*
 		 * Advanced Settings section
@@ -68,6 +81,10 @@ if ( ! function_exists( 'polygon_register_customizer_sections' ) ) {
 			)
 		);
 
+
+
+
+
 		/*
 		 * Register sections from partials
 		 *
@@ -77,7 +94,6 @@ if ( ! function_exists( 'polygon_register_customizer_sections' ) ) {
 		polygon_customizer_add_sections( 'layout' );
 	}
 	add_action( 'customize_register', 'polygon_register_customizer_sections' );
-
 }
 
 
@@ -85,7 +101,6 @@ if ( ! function_exists( 'polygon_register_customizer_sections' ) ) {
 
 
 if ( ! function_exists( 'polygon_customizer_add_sections' ) ) {
-
 	/**
 	 * Load partials for the customizer sections.
 	 *
