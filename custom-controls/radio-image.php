@@ -65,8 +65,6 @@ if ( ! function_exists( 'polygon_register_customizer_control_radio_image' ) ) {
 			 */
 			public $type = 'radio-image';
 
-
-
 			/**
 			 * Number of columns.
 			 *

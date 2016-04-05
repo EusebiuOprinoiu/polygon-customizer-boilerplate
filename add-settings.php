@@ -219,9 +219,9 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				'section'     => 'basic_settings_section',
 				'type'        => 'select',
 				'choices'     => array(
-					'first-option'  => 'First Option',
-					'second-option' => 'Second Option',
-					'third-option'  => 'Third Option',
+					'first-option'  => esc_html__( 'First Option', 'polygon' ),
+					'second-option' => esc_html__( 'Second Option', 'polygon' ),
+					'third-option'  => esc_html__( 'Third Option', 'polygon' ),
 				),
 			)
 		);
@@ -252,9 +252,9 @@ if ( ! function_exists( 'polygon_register_customizer_settings' ) ) {
 				'section'     => 'basic_settings_section',
 				'type'        => 'radio',
 				'choices'     => array(
-					'first-option'  => 'First Option',
-					'second-option' => 'Second Option',
-					'third-option'  => 'Third Option',
+					'first-option'  => esc_html__( 'First Option', 'polygon' ),
+					'second-option' => esc_html__( 'Second Option', 'polygon' ),
+					'third-option'  => esc_html__( 'Third Option', 'polygon' ),
 				),
 			)
 		);

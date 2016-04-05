@@ -69,8 +69,6 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 			 */
 			public $type = 'google-fonts';
 
-
-
 			/**
 			 * API Key for Google Fonts.
 			 *
@@ -78,8 +76,6 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 			 * @var   string
 			 */
 			public $api_key = null;
-
-
 
 			/**
 			 * Number of fonts to retreive.
@@ -89,8 +85,6 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 			 */
 			public $amount = 'all';
 
-
-
 			/**
 			 * Cache time in days.
 			 *
@@ -98,8 +92,6 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 			 * @var   int
 			 */
 			public $cache_time = 365;
-
-
 
 			/**
 			 * Specific fonts to display.
