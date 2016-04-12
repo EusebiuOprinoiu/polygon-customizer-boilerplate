@@ -59,8 +59,6 @@
 .wp-full-overlay-sidebar .customize-control-upload .container,
 .wp-full-overlay-sidebar .customize-control-site_icon .container {
 	min-height: 20px;
-	background: #e5e5e5;
-	border: 1px solid #dddddd;
 }
 
 .wp-full-overlay-sidebar .customize-control-image .placeholder,
