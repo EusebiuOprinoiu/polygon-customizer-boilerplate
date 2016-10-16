@@ -181,7 +181,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 				// Set the 'polygon_google_fonts' transient if not available.
 				if ( ! get_transient( 'polygon_google_fonts' ) ) {
 					$cloud_url   = 'https://www.googleapis.com/webfonts/v1/webfonts?key=' . $api_key;
-					$local_url   = '../assets/fonts/google-fonts/google-fonts.json?ver=' . POLYGON_THEME_VERSION;    // Change this to match your location.
+					$local_url   = get_template_directory_uri() . '/assets/fonts/google-fonts/google-fonts.json?ver=' . POLYGON_THEME_VERSION;    // Change this to match your location.
 					$cloud_data  = wp_remote_get( $cloud_url, array( 'sslverify' => false ) );
 					$local_data  = wp_remote_get( $local_url, array( 'sslverify' => false ) );
 
@@ -211,7 +211,7 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 				// Set the 'polygon_popular_google_fonts' transient if not available.
 				if ( ! get_transient( 'polygon_popular_google_fonts' ) ) {
 					$cloud_url   = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=' . $api_key;
-					$local_url   = '../assets/fonts/google-fonts/google-fonts-popular.json?ver=' . POLYGON_THEME_VERSION;    // Change this to match your location.
+					$local_url   = get_template_directory_uri() . '/assets/fonts/google-fonts/google-fonts-popular.json?ver=' . POLYGON_THEME_VERSION;    // Change this to match your location.
 					$cloud_data  = wp_remote_get( $cloud_url, array( 'sslverify' => false ) );
 					$local_data  = wp_remote_get( $local_url, array( 'sslverify' => false ) );
 
