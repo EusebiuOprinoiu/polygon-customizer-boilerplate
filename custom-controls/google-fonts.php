@@ -176,20 +176,69 @@ if ( ! function_exists( 'polygon_register_customizer_control_google_fonts' ) ) {
 					return null;
 				}
 
+
+
+				// Set the 'polygon_google_fonts' transient if not available.
 				if ( ! get_transient( 'polygon_google_fonts' ) ) {
-					$google_api   = 'https://www.googleapis.com/webfonts/v1/webfonts?key=' . $api_key;
-					$font_content = wp_remote_get( $google_api, array( 'sslverify' => false ) );
-					$content      = json_decode( $font_content['body'] );
+					$cloud_url   = 'https://www.googleapis.com/webfonts/v1/webfonts?key=' . $api_key;
+					$local_url   = '../assets/fonts/google-fonts/google-fonts.json?ver=' . POLYGON_THEME_VERSION;    // Change this to match your location.
+					$cloud_data  = wp_remote_get( $cloud_url, array( 'sslverify' => false ) );
+					$local_data  = wp_remote_get( $local_url, array( 'sslverify' => false ) );
+
+					if ( ! is_wp_error( $cloud_data ) ) {
+						$content = json_decode( $cloud_data['body'] );
+
+						if ( isset( $content->error ) ) {
+							if ( ! is_wp_error( $local_data ) ) {
+								$content = json_decode( $local_data['body'] );
+							} else {
+								return null;
+							}
+						}
+					} else {
+						if ( ! is_wp_error( $local_data ) ) {
+							$content = json_decode( $local_data['body'] );
+						} else {
+							return null;
+						}
+					}
+
 					set_transient( 'polygon_google_fonts', $content, $cache_time );
 				}
 
+
+
+				// Set the 'polygon_popular_google_fonts' transient if not available.
 				if ( ! get_transient( 'polygon_popular_google_fonts' ) ) {
-					$google_api   = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=' . $api_key;
-					$font_content = wp_remote_get( $google_api, array( 'sslverify' => false ) );
-					$content      = json_decode( $font_content['body'] );
+					$cloud_url   = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=' . $api_key;
+					$local_url   = '../assets/fonts/google-fonts/google-fonts-popular.json?ver=' . POLYGON_THEME_VERSION;    // Change this to match your location.
+					$cloud_data  = wp_remote_get( $cloud_url, array( 'sslverify' => false ) );
+					$local_data  = wp_remote_get( $local_url, array( 'sslverify' => false ) );
+
+					if ( ! is_wp_error( $cloud_data ) ) {
+						$content = json_decode( $cloud_data['body'] );
+
+						if ( isset( $content->error ) ) {
+							if ( ! is_wp_error( $local_data ) ) {
+								$content = json_decode( $local_data['body'] );
+							} else {
+								return null;
+							}
+						}
+					} else {
+						if ( ! is_wp_error( $local_data ) ) {
+							$content = json_decode( $local_data['body'] );
+						} else {
+							return null;
+						}
+					}
+
 					set_transient( 'polygon_popular_google_fonts', $content, $cache_time );
 				}
 
+
+
+				// Get fonts data from transients.
 				if ( 'all' == $this->amount ) {
 					$content = get_transient( 'polygon_google_fonts' );
 					return $content->items;
