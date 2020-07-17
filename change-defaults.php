@@ -35,10 +35,8 @@ if ( ! function_exists( 'polygon_change_customizer_defaults' ) ) {
 		$wp_customize->get_section( 'title_tagline' )->panel        = 'general_panel';
 		$wp_customize->get_section( 'title_tagline' )->priority     = 10;
 
-		if ( version_compare( $GLOBALS['wp_version'], '4.3', '<' ) ) {
-			$wp_customize->get_section( 'nav' )->panel              = 'general_panel';
-			$wp_customize->get_section( 'nav' )->priority           = 20;
-		}
+		$wp_customize->get_section( 'nav' )->panel                  = 'general_panel';
+		$wp_customize->get_section( 'nav' )->priority               = 20;
 
 		$wp_customize->get_section( 'header_image' )->panel         = 'general_panel';
 		$wp_customize->get_section( 'header_image' )->priority      = 30;
