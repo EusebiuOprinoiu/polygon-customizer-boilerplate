@@ -1,30 +1,237 @@
-# Autodetect text files
-* text=auto
+# ============================================================
+# Default behavior.
+# Auto detect filetypes and normalize text files.
+# ============================================================
+# * text=auto           - Use OS line endings
+# * text=auto eol=lf    - Use LF line endings
+# ============================================================
 
-# Force the following filetypes to have Unix eols
-*.* text eol=lf
+* text=auto eol=lf
 
-# Force the following filetypes to have Windows eols
-*.bat text eol=crlf
 
-# Force images/fonts to be handled as binaries
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.gif binary
-*.ico binary
-*.mov binary
-*.mp4 binary
-*.mp3 binary
-*.ogg binary
-*.flv binary
-*.fla binary
-*.swf binary
-*.rar binary
-*.zip binary
-*.gz binary
-*.7z binary
-*.ttf binary
-*.pdf binary
-*.exe binary
-*.data binary
+
+
+
+# ============================================================
+# Text files.
+# Make sure the filetypes below have normalized EOLs.
+# ============================================================
+
+# Markup
+*.php          text eol=lf
+*.htm          text eol=lf
+*.html         text eol=lf
+
+# Styles
+*.css          text eol=lf
+*.scss         text eol=lf
+*.sass         text eol=lf
+*.less         text eol=lf
+*.styl         text eol=lf
+*.map          text eol=lf
+
+# JavaScript
+*.js           text eol=lf
+*.ts           text eol=lf
+*.jsx          text eol=lf
+*.tsx          text eol=lf
+*.coffee       text eol=lf
+
+# Serialization
+*.json         text eol=lf
+*.neon         text eol=lf
+*.toml         text eol=lf
+*.yaml         text eol=lf
+*.xml          text eol=lf
+*.yml          text eol=lf
+*.txt          text eol=lf
+
+# Templates
+*.vue          text eol=lf
+*.jade         text eol=lf
+*.twig         text eol=lf
+*.latte        text eol=lf
+*.svelte       text eol=lf
+*.mustache     text eol=lf
+
+# Languages
+*.pot          text eol=lf
+*.po           text eol=lf
+*.mo           binary
+
+# Databases
+*.sql          text eol=lf
+*.sqlite       text eol=lf
+*.sqlitedb     text eol=lf
+
+# Documentation
+*.md           text eol=lf
+*.mkd          text eol=lf
+*.mkdn         text eol=lf
+*.mdown        text eol=lf
+*.markdn       text eol=lf
+*.markdown     text eol=lf
+
+# Configuration
+*.ini          text eol=lf
+*.cnf          text eol=lf
+*.conf         text eol=lf
+*.config       text eol=lf
+*.dist         text eol=lf
+*.lock         text eol=lf
+
+# Git and Development
+.*rc           text eol=lf
+.*conf         text eol=lf
+.*config       text eol=lf
+.*ignore       text eol=lf
+.gitkeep       text eol=lf
+.gitignore     text eol=lf
+.gitattributes text eol=lf
+
+# Unix Shell Scripts
+*.bash         text eol=lf
+*.zsh          text eol=lf
+*.sh           text eol=lf
+
+# Windows Shell Scripts
+*.bat          text eol=crlf
+*.cmd          text eol=crlf
+*.ps1          text eol=crlf
+
+
+
+
+
+# ============================================================
+# Binary files.
+# Make sure the filetypes below are not modified in any way.
+# ============================================================
+
+# Archives
+*.zip          binary
+*.rar          binary
+*.tar          binary
+*.tgz          binary
+*.gz           binary
+*.7z           binary
+*.z            binary
+
+# Graphics
+*.svg          text eol=lf
+*.png          binary
+*.jpg          binary
+*.gif          binary
+*.ico          binary
+*.bmp          binary
+*.hdr          binary
+*.exr          binary
+*.jxl          binary
+*.jxr          binary
+*.tga          binary
+*.raw          binary
+*.eps          binary
+*.tif          binary
+*.tiff         binary
+*.heif         binary
+*.avif         binary
+*.webp         binary
+*.jpeg         binary
+
+# Video
+*.mp4          binary
+*.m4v          binary
+*.mov          binary
+*.mkv          binary
+*.wmv          binary
+*.avi          binary
+*.mpg          binary
+*.mpeg         binary
+*.webm         binary
+
+# Audio
+*.m4a          binary
+*.m4b          binary
+*.mp3          binary
+*.ogg          binary
+*.wav          binary
+*.wma          binary
+*.mid          binary
+*.midi         binary
+*.flac         binary
+*.opus         binary
+
+# Fonts
+*.eot          binary
+*.otf          binary
+*.ttf          binary
+*.woff         binary
+*.woff2        binary
+
+# Documents
+*.pdf          binary
+*.csv          binary
+*.rtf          binary
+*.doc          binary
+*.xls          binary
+*.ppt          binary
+*.docx         binary
+*.xlsx         binary
+*.pptx         binary
+
+# Executables
+*.exe          binary
+*.msi          binary
+*.msix         binary
+
+# Other Binaries
+*.afdesign     binary
+*.afphoto      binary
+*.afpub        binary
+*.psd          binary
+*.ai           binary
+
+
+
+
+
+# ============================================================
+# Ignore development files and folders.
+# Make sure the content below is ignored during deployment.
+# ============================================================
+
+# Code Editors
+.idea          export-ignore
+.vscode        export-ignore
+.editorconfig  export-ignore
+
+# Development
+.dev           export-ignore
+.cache         export-ignore
+.polygon       export-ignore
+.wordpress     export-ignore
+
+# Github
+.github        export-ignore
+.gitkeep       export-ignore
+.gitignore     export-ignore
+.gitattributes export-ignore
+
+# Coding Standards
+*phpcs*        export-ignore
+*eslint*       export-ignore
+*prettier*     export-ignore
+*stylelint*    export-ignore
+
+# Testing and Analysis
+*psalm*        export-ignore
+*phpstan*      export-ignore
+*phpunit*      export-ignore
+
+# Tools and Package Managers
+*babel*        export-ignore
+*bower*        export-ignore
+*prepros*      export-ignore
+package.json   export-ignore
+composer.json  export-ignore
+composer.lock  export-ignore
