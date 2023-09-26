@@ -34,18 +34,14 @@ Thumbs.db
 .project
 .settings
 
-# Development Tools
+# Package Managers
 node_modules
 bower_components
 
-# Dev-Only Packages
-vendor
-!vendor/composer
-!vendor/autoload.php
-!vendor/package-name
+# Development Folders
+**/vendor/*
+!**/vendor/composer
+!**/vendor/autoload.php
 
-# Dev-Only Packages
-third-party
-!third-party/composer
-!third-party/autoload.php
-!third-party/package-name
+# Github Specific Files
+!.gitkeep

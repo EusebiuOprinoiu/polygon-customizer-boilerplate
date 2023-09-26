@@ -220,15 +220,18 @@
 # Coding Standards
 *phpcs*        export-ignore
 *eslint*       export-ignore
-*prettier*     export-ignore
 *stylelint*    export-ignore
+*markdownlint* export-ignore
 
 # Testing and Analysis
 *psalm*        export-ignore
 *phpstan*      export-ignore
 *phpunit*      export-ignore
+*prettier*     export-ignore
 
 # Tools and Package Managers
+*npm*          export-ignore
+*yarn*         export-ignore
 *babel*        export-ignore
 *bower*        export-ignore
 *prepros*      export-ignore
